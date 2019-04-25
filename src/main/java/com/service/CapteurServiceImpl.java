@@ -2,33 +2,34 @@ package com.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.DAO.CapteurDAO;
 import com.entity.Capteur;
-import com.entity.Piece;
 
 public class CapteurServiceImpl implements ICapteurService {
 
+	@Autowired
+	CapteurDAO capteurDAO;
+
 	@Override
 	public List<Capteur> getAllCapteurs() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.capteurDAO.findAll();
 	}
 
 	@Override
 	public Capteur findByIdCapteur(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.capteurDAO.findByIdCapteur(id);
 	}
 
 	@Override
 	public List<Capteur> findByType(String type) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.capteurDAO.findByType(type);
 	}
 
 	@Override
-	public List<Capteur> findByPiece(Piece piece) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Capteur> findByPiece(int idPiece) {
+		return this.capteurDAO.findByPiece(idPiece);
 	}
 
 }

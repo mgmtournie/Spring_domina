@@ -14,5 +14,5 @@ public interface ICapteurService {
 
 	public List<Capteur> findByType(String type);
 
-	public List<Capteur> findByPiece(Piece piece);
+	public List<Capteur> findByPiece(int idPiece);
 }

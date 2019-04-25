@@ -6,14 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.DAO.ConsommationDAO;
 import com.entity.Consommation;
-import com.entity.Installation;
-import com.entity.Piece;
 
 public class ConsommationServiceImpl implements IConsommationService {
 
 	@Autowired
 	ConsommationDAO consommationDAO;
-	
+
 	@Override
 	public List<Consommation> getAllConsommations() {
 		return this.consommationDAO.findAll();
@@ -26,20 +24,17 @@ public class ConsommationServiceImpl implements IConsommationService {
 
 	@Override
 	public Consommation findByInstal(int idinstal) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.consommationDAO.findByInstal(idinstal);
 	}
 
 	@Override
 	public List<Consommation> findByIdConsommateur(int idConsommateur) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.consommationDAO.findByIdConsommateur(idConsommateur);
 	}
 
 	@Override
 	public List<Consommation> findByType(String type) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.consommationDAO.findByType(type);
 	}
 
 }
