@@ -55,6 +55,12 @@ public class PersonneServiceTest {
 		Mockito.verify(personneDAO).findByIdUser(id);
 	}
 	
-
+	@Test
+	public void should_search_by_name_when_findByName_is_called() {
+		LOGGER.info("--------------- Executing should_search_by_name_when_findByName_is_called test Of PersonneServiceImplTest ---------------");
+		String name = new String("bob");
+		personneService.findByNom(name);
+		Mockito.verify(personneDAO).findByNom(name);
+	}
 
 }
