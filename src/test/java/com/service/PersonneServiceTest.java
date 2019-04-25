@@ -33,7 +33,7 @@ public class PersonneServiceTest {
 	@Test
 	public void should_store_when_add_is_called() {
 		LOGGER.info(
-				"--------------- Executing should_store_when_save_is_called test Of UserServiceImplTest ---------------");
+				"--------------- Executing should_store_when_save_is_called test Of PersonneServiceImplTest ---------------");
 		Personne myPersonne = new Personne();
 		personneService.addPersonne(myPersonne);
 		Mockito.verify(personneDAO).save(myPersonne);
@@ -42,17 +42,19 @@ public class PersonneServiceTest {
 	@Test
 	public void should_update_when_update_is_called() {
 		LOGGER.info(
-				"--------------- Executing should_store_when_save_is_called test Of UserServiceImplTest ---------------");
+				"--------------- Executing should_store_when_save_is_called test Of PersonneServiceImplTest ---------------");
 		Personne myPersonne = new Personne();
 		personneService.updatePersonne(myPersonne);
 		Mockito.verify(personneDAO).save(myPersonne);
 	}
 	@Test
 	public void should_search_by_id_when_findById_is_called() {
-		LOGGER.info("--------------- Executing should_search_by_id_when_findById_is_called test Of UserServiceImplTest ---------------");
+		LOGGER.info("--------------- Executing should_search_by_id_when_findById_is_called test Of PersonneServiceImplTest ---------------");
 		Integer id = new Integer(1);
 		personneService.findByIdUser(id);
 		Mockito.verify(personneDAO).findByIdUser(id);
 	}
+	
+
 
 }
