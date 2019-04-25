@@ -28,7 +28,7 @@ public class PersonneServiceImpl implements IPersonneService {
 	}
 
 	public void updatePersonne(Personne personne) {
-
+		this.personneDAO.save(personne);
 	}
 
 	public void deletePersonne(Personne personne) {
