@@ -3,8 +3,6 @@ package com.service;
 import java.util.List;
 
 import com.entity.Consommation;
-import com.entity.Installation;
-import com.entity.Piece;
 
 public interface IConsommationService {
 

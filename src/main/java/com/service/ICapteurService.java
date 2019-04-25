@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.entity.Capteur;
 
-import com.entity.Piece;
-
 public interface ICapteurService {
 
 	public List<Capteur> getAllCapteurs();
