@@ -20,7 +20,7 @@ public class PersonneServiceImpl implements IPersonneService {
 	}
 
 	public List<Personne> getAllPersonnes() {
-		return null;
+		return this.personneDAO.findAll();
 	}
 
 	public void addPersonne(Personne personne) {
