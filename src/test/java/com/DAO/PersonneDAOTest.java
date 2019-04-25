@@ -41,7 +41,7 @@ public class PersonneDAOTest {
 		Personne addedpersonne = personneDAO.save(new Personne(02, "Babar"));
 		LOGGER.info("---------------Personne saved---------------");
 		LOGGER.info("---------------Update for Personne---------------");
-		Personne updatePersonne = personneDAO.save(new Personne(addedpersonne.getId_user(), "Bambi"));
+		Personne updatePersonne = personneDAO.save(new Personne(addedpersonne.getIdUser(), "Bambi"));
 		LOGGER.info("---------------Personne found---------------");
 		LOGGER.info("---------------Verifiying  Personne---------------");
 		assertNotNull(updatePersonne);
@@ -93,4 +93,17 @@ public class PersonneDAOTest {
 		LOGGER.info("---------------User Verified---------------");
 	}
 
+	@Test
+	public void givenEntityRepository_whenRetrievingOneByIdUser() {
+		LOGGER.info("---------------Testing givenEntityRepository_whenRetrievingOneByIdUser Method---------------");
+		Personne addedPersonne = personneDAO.save(new Personne(15, "anna"));
+		LOGGER.info("---------------User saved---------------");
+		LOGGER.info("---------------Searching for User---------------");
+		Personne foundPersonne = personneDAO.findByIdUser(addedPersonne.getIdUser());
+		LOGGER.info("---------------User found---------------");
+		LOGGER.info("---------------Verifiying  User---------------");
+		assertNotNull(foundPersonne);
+		assertEquals(addedPersonne.getIdUser(), foundPersonne.getIdUser());
+		LOGGER.info("---------------User Verified---------------");
+	}
 }

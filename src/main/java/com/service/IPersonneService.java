@@ -28,4 +28,6 @@ public interface IPersonneService {
 	public void arreterProgramme(int idProgramme);
 
 	public void consulterCatpeur(int idCapteur);
+	
+	public Personne findByIdUser(int idUser);
 }
