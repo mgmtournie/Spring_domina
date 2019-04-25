@@ -3,8 +3,6 @@ package com.service;
 import java.util.List;
 
 import com.entity.Installation;
-import com.entity.Piece;
-import com.entity.Programme;
 
 public interface IInstallationService {
 

@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.entity.Installation;
-import com.entity.Piece;
 
 @Repository
 public interface InstallationDAO extends JpaRepository<Installation, Double> {

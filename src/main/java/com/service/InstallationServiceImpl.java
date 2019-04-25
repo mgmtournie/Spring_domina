@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.DAO.InstallationDAO;
 import com.entity.Installation;
-import com.entity.Piece;
-import com.entity.Programme;
 
 public class InstallationServiceImpl implements IInstallationService {
 
