@@ -3,10 +3,11 @@ package com.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.DAO.CapteurDAO;
 import com.entity.Capteur;
-
+@Service
 public class CapteurServiceImpl implements ICapteurService {
 
 	@Autowired
