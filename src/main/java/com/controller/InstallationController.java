@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.entity.Installation;
 import com.service.IInstallationService;
 
+
 @RestController
-@RequestMapping("/prog")
+@RequestMapping("/instal")
 @CrossOrigin(origins = "http://localhost:8034")
 public class InstallationController {
 
