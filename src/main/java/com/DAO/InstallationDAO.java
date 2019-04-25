@@ -21,4 +21,5 @@ public interface InstallationDAO extends JpaRepository<Installation, Double> {
 
 	public List<Installation> findByEtat(boolean etat);
 
+
 }
