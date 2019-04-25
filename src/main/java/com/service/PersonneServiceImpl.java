@@ -20,7 +20,7 @@ public class PersonneServiceImpl implements IPersonneService {
 	}
 
 	public List<Personne> getAllPersonnes() {
-		return null;
+		return this.personneDAO.findAll();
 	}
 
 	public void addPersonne(Personne personne) {
@@ -32,7 +32,7 @@ public class PersonneServiceImpl implements IPersonneService {
 	}
 
 	public void deletePersonne(Personne personne) {
-
+		this.personneDAO.delete(personne);
 	}
 
 	public Personne findByUsername(String username) {

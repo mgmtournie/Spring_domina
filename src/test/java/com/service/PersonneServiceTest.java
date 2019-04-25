@@ -47,20 +47,45 @@ public class PersonneServiceTest {
 		personneService.updatePersonne(myPersonne);
 		Mockito.verify(personneDAO).save(myPersonne);
 	}
+
 	@Test
 	public void should_search_by_id_when_findById_is_called() {
-		LOGGER.info("--------------- Executing should_search_by_id_when_findById_is_called test Of PersonneServiceImplTest ---------------");
+		LOGGER.info(
+				"--------------- Executing should_search_by_id_when_findById_is_called test Of PersonneServiceImplTest ---------------");
 		Integer id = new Integer(1);
 		personneService.findByIdUser(id);
 		Mockito.verify(personneDAO).findByIdUser(id);
 	}
-	
+
 	@Test
 	public void should_search_by_name_when_findByName_is_called() {
-		LOGGER.info("--------------- Executing should_search_by_name_when_findByName_is_called test Of PersonneServiceImplTest ---------------");
+		LOGGER.info(
+				"--------------- Executing should_search_by_name_when_findByName_is_called test Of PersonneServiceImplTest ---------------");
 		String name = new String("bob");
 		personneService.findByNom(name);
 		Mockito.verify(personneDAO).findByNom(name);
+	}
+
+	@Test
+	public void should_search_all_when_getAllPersonnes_is_called() {
+		LOGGER.info(
+				"--------------- Executing should_search_all_when_getAllPersonnes_is_called test Of PersonneServiceImplTest ---------------");
+		Personne p1 = new Personne(1, "BOB");
+		Personne p2 = new Personne(2, "SAM");
+		personneService.addPersonne(p1);
+		personneService.addPersonne(p2);
+
+		personneService.getAllPersonnes();
+		Mockito.verify(personneDAO).findAll();
+	}
+
+	@Test
+	public void should_delete_when_deletePersonne_is_called() {
+		LOGGER.info(
+				"--------------- Executing should_delete_when_deletePersonne_is_called test Of PersonneServiceImplTest ---------------");
+		Personne p = new Personne();
+		personneService.deletePersonne(p);
+		Mockito.verify(personneDAO).delete(p);
 	}
 
 }
