@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="Spring_Domina">
+
+		<class>com.entity.Capteur</class>
+		<class>com.entity.CapteurCO2</class>
+		<class>com.entity.CapteurHumidite</class>
+		<class>com.entity.CapteurLumen</class>
+		<class>com.entity.CapteurTemp</class>
+		<class>com.entity.Consommation</class>
+		<class>com.entity.ConsommationChauffage</class>
+		<class>com.entity.ConsommationEau</class>
+		<class>com.entity.ConsommationElec</class>
+		<class>com.entity.InstalChauffage</class>
+		<class>com.entity.InstalChauffeEau</class>
+		<class>com.entity.InstalEclairage</class>
+		<class>com.entity.InstalVMC</class>
+		<class>com.entity.InstalVolet</class>
+		<class>com.entity.Installation</class>
+		<class>com.entity.Personne</class>
+		<class>com.entity.Piece</class>
+		<class>com.entity.Programme</class>
+		<class>com.entity.Role</class>
+			
+	</persistence-unit>
+</persistence>
+

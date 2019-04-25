@@ -1,0 +1,43 @@
+//package com.service;
+//
+//import java.util.List;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.stereotype.Service;
+//
+//import com.DAO.PersonneDAO;
+//import com.DAO.ProgrammeDAO;
+//import com.entity.Personne;
+//import com.entity.Programme;
+//@Service
+//public class ProgammeService {
+//
+//	@Autowired
+//	ProgrammeDAO programmeDAO;
+//
+//	public List<Programme> getAllPersonnes() {
+//		return this.programmeDAO.findAll();
+//	}
+//
+//	public Programme addProgramme(Programme programme){
+//		return this.programmeDAO.save(programme);
+//	}
+//
+//	public void updateProgramme(Programme programme ) {
+//
+//		this.programmeDAO.save(programme);
+//	}
+//
+//	public void deleteProgramme(Programme programme) {
+//
+//		this.programmeDAO.delete(programme);
+//	}
+//
+//	public Programme findByIdProg(int idProgramme) {
+//		 return this.programmeDAO.findByIdProg(idProgramme);
+//
+//	}
+//	public Programme findByNomProg(String nomProg){
+//		return this.programmeDAO.findByNomProg(nomProg);
+//	}
+//}
