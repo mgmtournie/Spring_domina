@@ -6,7 +6,7 @@ import com.entity.Programme;
 
 public interface IProgrammeService {
 
-	public List<Programme> getAllPersonnes();
+	public List<Programme> getAllProgrammes();
 
 	public void addProgramme(Programme programme);
 

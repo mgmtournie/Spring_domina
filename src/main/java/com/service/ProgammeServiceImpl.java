@@ -10,17 +10,17 @@ import com.DAO.ProgrammeDAO;
 import com.entity.Programme;
 
 @Service
-public class ProgammeServiceImpl {
+public class ProgammeServiceImpl implements IProgrammeService {
 
 	@Autowired
 	ProgrammeDAO programmeDAO;
 
-	public List<Programme> getAllPersonnes() {
+	public List<Programme> getAllProgrammes() {
 		return this.programmeDAO.findAll();
 	}
 
-	public Programme addProgramme(Programme programme) {
-		return this.programmeDAO.save(programme);
+	public void addProgramme(Programme programme) {
+		this.programmeDAO.save(programme);
 	}
 
 	public void updateProgramme(Programme programme) {
