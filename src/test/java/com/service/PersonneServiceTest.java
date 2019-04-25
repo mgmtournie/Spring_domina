@@ -38,4 +38,14 @@ public class PersonneServiceTest {
 		personneService.addPersonne(myPersonne);
 		Mockito.verify(personneDAO).save(myPersonne);
 	}
+
+	@Test
+	public void should_update_when_update_is_called() {
+		LOGGER.info(
+				"--------------- Executing should_store_when_save_is_called test Of UserServiceImplTest ---------------");
+		Personne myPersonne = new Personne();
+		personneService.updatePersonne(myPersonne);
+		Mockito.verify(personneDAO).save(myPersonne);
+	}
+
 }
