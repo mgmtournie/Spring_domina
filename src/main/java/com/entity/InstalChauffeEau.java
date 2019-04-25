@@ -26,9 +26,9 @@ public class InstalChauffeEau extends Installation {
 		// TODO Auto-generated constructor stub
 	}
 
-	public InstalChauffeEau(int id, String nomInstal, String dateAjout, Boolean etat, Piece piece,
-			List<Programme> programmes) {
-		super(id, nomInstal, dateAjout, etat, piece, programmes);
+	public InstalChauffeEau(int id, String type, String dateAjout, Boolean etat, Piece piece,
+			List<Programme> programmes, Consommation conso) {
+		super(id, type, dateAjout, etat, piece, programmes, conso);
 		// TODO Auto-generated constructor stub
 	}
 

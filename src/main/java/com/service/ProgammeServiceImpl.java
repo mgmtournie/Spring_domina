@@ -10,7 +10,7 @@
 //import com.entity.Personne;
 //import com.entity.Programme;
 //@Service
-//public class ProgammeService {
+//public class ProgammeServiceImpl implements IProgrammeService {
 //
 //	@Autowired
 //	ProgrammeDAO programmeDAO;
@@ -23,7 +23,7 @@
 //		return this.programmeDAO.save(programme);
 //	}
 //
-//	public void updateProgramme(Programme programme ) {
+//	public void updateProgramme(Programme programme) {
 //
 //		this.programmeDAO.save(programme);
 //	}

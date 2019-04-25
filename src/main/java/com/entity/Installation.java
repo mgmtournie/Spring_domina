@@ -15,6 +15,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -29,7 +30,7 @@ public class Installation {
 	private int id;
 
 	@Column(name = "TYPE", insertable = false, updatable = false)
-	private String nomInstal;
+	private String type;
 
 	@Column(name = "Date_ajout")
 	private String DateAjout;
@@ -44,20 +45,24 @@ public class Installation {
 	@ManyToMany(mappedBy = "installations")
 	private List<Programme> programmes = new ArrayList<Programme>();
 
+	@OneToOne
+	Consommation conso;
+
 	public Installation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Installation(int id, String nomInstal, String dateAjout, Boolean etat, Piece piece,
-			List<Programme> programmes) {
+	public Installation(int id, String type, String dateAjout, Boolean etat, Piece piece, List<Programme> programmes,
+			Consommation conso) {
 		super();
 		this.id = id;
-		this.nomInstal = nomInstal;
+		this.type = type;
 		DateAjout = dateAjout;
 		this.etat = etat;
 		this.piece = piece;
 		this.programmes = programmes;
+		this.conso = conso;
 	}
 
 	public int getId() {
@@ -68,12 +73,12 @@ public class Installation {
 		this.id = id;
 	}
 
-	public String getNomInstal() {
-		return nomInstal;
+	public String getType() {
+		return type;
 	}
 
-	public void setNomInstal(String nomInstal) {
-		this.nomInstal = nomInstal;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getDateAjout() {
@@ -106,6 +111,14 @@ public class Installation {
 
 	public void setProgrammes(List<Programme> programmes) {
 		this.programmes = programmes;
+	}
+
+	public Consommation getConso() {
+		return conso;
+	}
+
+	public void setConso(Consommation conso) {
+		this.conso = conso;
 	}
 
 }

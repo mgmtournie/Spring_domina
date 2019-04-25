@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -32,9 +33,12 @@ public class Piece {
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<Installation> installations = new ArrayList<Installation>();
-	
+
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<Capteur> capteurs = new ArrayList<Capteur>();
+
+	@ManyToOne
+	Consommation conso;
 
 	public Piece() {
 		super();
@@ -42,7 +46,7 @@ public class Piece {
 	}
 
 	public Piece(int idPiece, String nomPiece, int superficieM2, List<Programme> programmes,
-			List<Installation> installations, List<Capteur> capteurs) {
+			List<Installation> installations, List<Capteur> capteurs, Consommation conso) {
 		super();
 		this.idPiece = idPiece;
 		this.nomPiece = nomPiece;
@@ -50,6 +54,7 @@ public class Piece {
 		this.programmes = programmes;
 		this.installations = installations;
 		this.capteurs = capteurs;
+		this.conso = conso;
 	}
 
 	public int getIdPiece() {
@@ -99,8 +104,13 @@ public class Piece {
 	public void setCapteurs(List<Capteur> capteurs) {
 		this.capteurs = capteurs;
 	}
-	
-	
-	
-	
+
+	public Consommation getConso() {
+		return conso;
+	}
+
+	public void setConso(Consommation conso) {
+		this.conso = conso;
+	}
+
 }

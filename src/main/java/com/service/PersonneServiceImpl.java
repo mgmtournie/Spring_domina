@@ -10,7 +10,7 @@ import com.entity.Personne;
 import com.entity.Programme;
 
 @Service
-public class PersonneService {
+public class PersonneServiceImpl implements IPersonneService {
 
 	@Autowired
 	PersonneDAO personneDAO;
@@ -19,8 +19,7 @@ public class PersonneService {
 		return this.personneDAO.findAll();
 	}
 
-	public Personne addPersonne(Personne personne) {
-		return this.personneDAO.save(personne);
+	public void addPersonne(Personne personne) {
 	}
 
 	public void updatePersonne(Personne personne) {
@@ -32,11 +31,12 @@ public class PersonneService {
 	}
 
 	public Personne findByUsername(String username) {
-		 return this.personneDAO.findByUsername(username);
+		return this.personneDAO.findByUsername(username);
 
 	}
 
-	public void findByNom(String nom) {
+	public Personne findByNom(String nom) {
+		return null;
 
 	}
 
@@ -53,7 +53,7 @@ public class PersonneService {
 
 	}
 
-	public void arrerterProgramme(int idProgramme) {
+	public void arreterProgramme(int idProgramme) {
 
 	}
 

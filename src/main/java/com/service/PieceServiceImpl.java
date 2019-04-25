@@ -9,7 +9,7 @@
 //import com.entity.Piece;
 //
 //@Service
-//public class PieceService {
+//public class PieceServiceImpl implements IPieceService {
 //
 //	@Autowired
 //	PieceDAO pieceDAO;
