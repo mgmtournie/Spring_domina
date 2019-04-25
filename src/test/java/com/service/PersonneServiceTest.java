@@ -47,5 +47,12 @@ public class PersonneServiceTest {
 		personneService.updatePersonne(myPersonne);
 		Mockito.verify(personneDAO).save(myPersonne);
 	}
+	@Test
+	public void should_search_by_id_when_findById_is_called() {
+		LOGGER.info("--------------- Executing should_search_by_id_when_findById_is_called test Of UserServiceImplTest ---------------");
+		Integer id = new Integer(1);
+		personneService.findByIdUser(id);
+		Mockito.verify(personneDAO).findByIdUser(id);
+	}
 
 }

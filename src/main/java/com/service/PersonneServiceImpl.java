@@ -39,7 +39,9 @@ public class PersonneServiceImpl implements IPersonneService {
 		return null;
 
 	}
-
+	public Personne findByIdUser(int idUser) {
+		return null;
+	}
 	public Personne findByNom(String nom) {
 		return null;
 
