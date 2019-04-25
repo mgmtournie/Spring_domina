@@ -37,6 +37,6 @@ public class CapteurController {
 		return capteurService.findByPiece(idPiece);
 	}
 	
-	
+	//need to add crud 
 
 }
