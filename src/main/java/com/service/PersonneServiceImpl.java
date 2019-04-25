@@ -36,7 +36,7 @@ public class PersonneServiceImpl implements IPersonneService {
 	}
 
 	public Personne findByUsername(String username) {
-		return null;
+		return this.personneDAO.findByUsername(username);
 
 	}
 	public Personne findByIdUser(int idUser) {

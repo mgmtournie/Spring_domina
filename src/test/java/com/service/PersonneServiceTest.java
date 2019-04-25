@@ -88,4 +88,12 @@ public class PersonneServiceTest {
 		Mockito.verify(personneDAO).delete(p);
 	}
 
+	@Test
+	public void should_search_by_username_when_findByUsername_is_called() {
+		LOGGER.info(
+				"--------------- Executing should_search_by_username_when_findByUsername_is_called test Of PersonneServiceImplTest ---------------");
+		String username = new String("BOBBY");
+		personneService.findByUsername(username);
+		Mockito.verify(personneDAO).findByUsername(username);
+	}
 }
