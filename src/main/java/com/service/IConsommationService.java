@@ -12,9 +12,9 @@ public interface IConsommationService {
 	
 	public List<Consommation> findByType(String type);
 
-	public List<Consommation> findByPiece(Piece piece);
+	public List<Consommation> findByPieces(int idpiece);
 
-	public Consommation findByInstallation(Installation instal);
+	public Consommation findByInstal(int idinstal);
 
 	public List<Consommation> findByIdConsommateur(int idConsommateur);
 	

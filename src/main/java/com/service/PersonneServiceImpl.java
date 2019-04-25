@@ -16,27 +16,28 @@ public class PersonneServiceImpl implements IPersonneService {
 	PersonneDAO personneDAO;
 
 	public List<Personne> getAllPersonnes() {
-		return this.personneDAO.findAll();
+	return null; //this.personneDAO.findAll();
 	}
 
 	public void addPersonne(Personne personne) {
+		//this.personneDAO.save(personne);
 	}
 
 	public void updatePersonne(Personne personne) {
-
+		//this.personneDAO.save(personne);
 	}
 
 	public void deletePersonne(Personne personne) {
-
+		//this.personneDAO.delete(personne);
 	}
 
 	public Personne findByUsername(String username) {
-		return this.personneDAO.findByUsername(username);
+		return null; //this.personneDAO.findByUsername(username);
 
 	}
 
 	public Personne findByNom(String nom) {
-		return null;
+		return null; //this.personneDAO.findByNom(nom);
 
 	}
 

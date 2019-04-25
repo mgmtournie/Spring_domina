@@ -2,26 +2,30 @@ package com.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.DAO.ConsommationDAO;
 import com.entity.Consommation;
 import com.entity.Installation;
 import com.entity.Piece;
 
 public class ConsommationServiceImpl implements IConsommationService {
 
+	@Autowired
+	ConsommationDAO consommationDAO;
+	
 	@Override
 	public List<Consommation> getAllConsommations() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.consommationDAO.findAll();
 	}
 
 	@Override
-	public List<Consommation> findByPiece(Piece piece) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Consommation> findByPieces(int idpiece) {
+		return this.consommationDAO.findByPieces(idpiece);
 	}
 
 	@Override
-	public Consommation findByInstallation(Installation instal) {
+	public Consommation findByInstal(int idinstal) {
 		// TODO Auto-generated method stub
 		return null;
 	}

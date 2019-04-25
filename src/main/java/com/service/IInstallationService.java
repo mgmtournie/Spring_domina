@@ -14,13 +14,13 @@ public interface IInstallationService {
 
 	public Installation findById(int id);
 
-	public Installation findByType(String type);
+	public List<Installation> findByType(String type);
 
-	public Installation findByEtat(Boolean etat);
+	public List<Installation> findByEtat(boolean etat);
 
-	public Installation findByPiece(Piece piece);
+	public List<Installation> findByPiece(int idpiece);
 
-	public Installation findByProgramme(Programme prog);
+	public List<Installation> findByProgramme(int idprog);
 
 	public void actived(Installation instal);
 

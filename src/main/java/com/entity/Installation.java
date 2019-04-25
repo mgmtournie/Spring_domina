@@ -36,7 +36,7 @@ public class Installation {
 	private String DateAjout;
 
 	@Column(name = "ETAT")
-	private Boolean etat;
+	private boolean etat;
 
 	@ManyToOne
 	@JoinColumn(name = "ID_ROOM")
@@ -53,7 +53,7 @@ public class Installation {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Installation(int id, String type, String dateAjout, Boolean etat, Piece piece, List<Programme> programmes,
+	public Installation(int id, String type, String dateAjout, boolean etat, Piece piece, List<Programme> programmes,
 			Consommation conso) {
 		super();
 		this.id = id;
@@ -89,11 +89,11 @@ public class Installation {
 		DateAjout = dateAjout;
 	}
 
-	public Boolean getEtat() {
+	public boolean getEtat() {
 		return etat;
 	}
 
-	public void setEtat(Boolean etat) {
+	public void setEtat(boolean etat) {
 		this.etat = etat;
 	}
 
