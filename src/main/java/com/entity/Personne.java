@@ -16,7 +16,7 @@ public class Personne {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_user;
+	private int idUser;
 
 	@Column(name = "LASTNAME")
 	private String nom;
@@ -39,13 +39,13 @@ public class Personne {
 	public Personne(int id, String nom) {
 		super();
 		this.nom = nom;
-		this.id_user = id;
+		this.idUser = id;
 	}
 
-	public Personne(int id_user, String nom, String prenom, String username, String password, boolean actived,
+	public Personne(int idUser, String nom, String prenom, String username, String password, boolean actived,
 			List<Role> roles) {
 		super();
-		this.id_user = id_user;
+		this.idUser = idUser;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.username = username;
@@ -54,12 +54,12 @@ public class Personne {
 		this.roles = roles;
 	}
 
-	public int getId_user() {
-		return id_user;
+	public int getIdUser() {
+		return idUser;
 	}
 
-	public void setId_user(int id_user) {
-		this.id_user = id_user;
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
 	}
 
 
