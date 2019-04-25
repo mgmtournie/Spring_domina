@@ -43,7 +43,7 @@ public class PersonneServiceImpl implements IPersonneService {
 		return this.personneDAO.findByIdUser(idUser);
 	}
 	public Personne findByNom(String nom) {
-		return null;
+		return this.personneDAO.findByNom(nom);
 
 	}
 
