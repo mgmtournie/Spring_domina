@@ -36,10 +36,10 @@ public class Personne {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Personne(String username, String nom) {
+	public Personne(int id, String nom) {
 		super();
 		this.nom = nom;
-		this.username = username;
+		this.id_user = id;
 	}
 
 	public Personne(int id_user, String nom, String prenom, String username, String password, boolean actived,

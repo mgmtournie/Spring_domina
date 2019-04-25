@@ -9,9 +9,9 @@ import com.entity.Installation;
 import com.entity.Piece;
 
 @Repository
-public interface InstallationDAO  extends JpaRepository<Installation, Double>{
+public interface InstallationDAO  extends JpaRepository<Installation, Integer>{
 	// findbynom, find by etat
-	public List<Installation> findByNomInstal(String type);
+	public List<Installation> findByType (String Type);
 	
 	public List<Installation> findByPiece(int idPiece);
 	

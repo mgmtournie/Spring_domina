@@ -9,7 +9,7 @@ import com.DAO.ProgrammeDAO;
 
 import com.entity.Programme;
 @Service
-public class ProgammeService {
+public class ProgammeServiceImpl {
 
 	@Autowired
 	ProgrammeDAO programmeDAO;
