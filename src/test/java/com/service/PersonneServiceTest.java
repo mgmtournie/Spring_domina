@@ -79,4 +79,13 @@ public class PersonneServiceTest {
 		Mockito.verify(personneDAO).findAll();
 	}
 
+	@Test
+	public void should_delete_when_deletePersonne_is_called() {
+		LOGGER.info(
+				"--------------- Executing should_delete_when_deletePersonne_is_called test Of PersonneServiceImplTest ---------------");
+		Personne p = new Personne();
+		personneService.deletePersonne(p);
+		Mockito.verify(personneDAO).delete(p);
+	}
+
 }
