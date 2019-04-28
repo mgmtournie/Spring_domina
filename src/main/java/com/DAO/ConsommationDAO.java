@@ -10,7 +10,7 @@ import com.entity.Consommation;
 @Repository
 public interface ConsommationDAO extends JpaRepository<Consommation, Integer>{
 
-	public List<Consommation> findByIdConsommateur(int idConso); 
+	public Consommation findByIdConsommateur(int idConso); 
 	
 	public List<Consommation> findByPieces(int idPiece); 
 	

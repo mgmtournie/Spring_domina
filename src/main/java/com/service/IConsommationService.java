@@ -14,7 +14,12 @@ public interface IConsommationService {
 
 	public Consommation findByInstal(int idinstal);
 
-	public List<Consommation> findByIdConsommateur(int idConsommateur);
+	public Consommation findByIdConsommateur(int idConsommateur);
 	
+	public void addConsommation(Consommation consommation); 
+	
+	public void deleteConsommation (Consommation consommation); 
+	
+	public void updateConsommation (Consommation consommation); 
 	
 }

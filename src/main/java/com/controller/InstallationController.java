@@ -77,7 +77,7 @@ public class InstallationController {
 		}
 	}
 
-	@DeleteMapping(value = "/{idInstall")
+	@DeleteMapping(value = "/{idInstall}")
 	public void deleteInstallation(@PathVariable int idInstall) {
 		if (installationService.findById(idInstall) != null) {
 			installationService.deleteInstallation(installationService.findById(idInstall));

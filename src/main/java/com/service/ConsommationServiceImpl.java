@@ -29,13 +29,31 @@ public class ConsommationServiceImpl implements IConsommationService {
 	}
 
 	@Override
-	public List<Consommation> findByIdConsommateur(int idConsommateur) {
+	public Consommation findByIdConsommateur(int idConsommateur) {
 		return this.consommationDAO.findByIdConsommateur(idConsommateur);
 	}
 
 	@Override
 	public List<Consommation> findByType(String type) {
 		return this.consommationDAO.findByType(type);
+	}
+
+	@Override
+	public void addConsommation(Consommation consommation) {
+		this.consommationDAO.save(consommation);
+		
+	}
+
+	@Override
+	public void deleteConsommation(Consommation consommation) {
+		this.consommationDAO.delete(consommation);
+		
+	}
+
+	@Override
+	public void updateConsommation(Consommation consommation) {
+		this.consommationDAO.save(consommation);
+		
 	}
 
 }
