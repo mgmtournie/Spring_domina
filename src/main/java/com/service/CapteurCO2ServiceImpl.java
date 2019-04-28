@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.DAO.CapteurCO2SDAO;
-import com.DAO.ICapteurCO2Service;
 import com.entity.CapteurCO2;
 
 @Service
@@ -41,7 +40,7 @@ public class CapteurCO2ServiceImpl implements ICapteurCO2Service {
 	}
 
 	@Override
-	public void deleteCapteuCO2r(CapteurCO2 CapteurCO2) {
+	public void deleteCapteurCO2(CapteurCO2 CapteurCO2) {
 		this.capteurCO2DAO.delete(CapteurCO2);
 	}
 

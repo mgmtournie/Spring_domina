@@ -1,4 +1,4 @@
-package com.DAO;
+package com.service;
 
 import java.util.List;
 
@@ -16,6 +16,6 @@ public interface ICapteurCO2Service {
 
 	public void updateCapteurCO2(CapteurCO2 capteurCO2);
 
-	public void deleteCapteuCO2r(CapteurCO2 CapteurCO2);
+	public void deleteCapteurCO2(CapteurCO2 CapteurCO2);
 
 }

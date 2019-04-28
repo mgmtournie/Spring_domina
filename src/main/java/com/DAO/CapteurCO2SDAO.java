@@ -15,6 +15,6 @@ public interface CapteurCO2SDAO extends JpaRepository<CapteurCO2, Integer> {
 
 	public List<CapteurCO2> findByPiece(int idPiece);
 
-	public List<CapteurCO2> findByType(String type);
+	
 
 }

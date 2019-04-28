@@ -14,48 +14,49 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.entity.CapteurCO2;
-import com.service.ICapteurCO2Service;
+
+import com.entity.CapteurLumen;
+import com.service.ICapteurLumenService;
 
 @RestController
-@RequestMapping("/capteur/CO2")
+@RequestMapping("/capteur/lumen")
 @CrossOrigin(origins = "http://localhost:8034")
-public class CapteurCO2Controller {
+public class CapteurLumenController {
 	
 	@Autowired
-	ICapteurCO2Service capteurCO2Service; 
+	ICapteurLumenService capteurLumenService; 
 	
 	@GetMapping(value= "/all")
-	public List<CapteurCO2> getAllCapteursCO2() {
-		return this.capteurCO2Service.getAllCapteursCO2();
+	public List<CapteurLumen> getAllCapteursCO2() {
+		return this.capteurLumenService.getAllCapteurLumens();
 	}
 
 	@GetMapping(value= "/{id}")
-	public CapteurCO2 findByIdCapteurCO2(int id) {
-		return this.capteurCO2Service.findByIdCapteurCO2(id);
+	public  CapteurLumen findByIdCapteurLumen(int id) {
+		return this.capteurLumenService.findByIdCapteurLumen(id);
 	}
 
 	@GetMapping(value= "/{idpiece}")
-	public List<CapteurCO2> findByPiece(int idPiece) {
-		return this.capteurCO2Service.findByPiece(idPiece);
+	public List<CapteurLumen> findByPiece(int idPiece) {
+		return this.capteurLumenService.findByPiece(idPiece);
 	}
 
 	@PostMapping(value = "/addCapteur", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void addCapteurCO2(CapteurCO2 capteurCO2) {
-		this.capteurCO2Service.addCapteurCO2(capteurCO2);
+	public void addCapteurLumen(CapteurLumen capteurLumen) {
+		this.capteurLumenService.addCapteurLumen(capteurLumen);
 	}
 
 	@PutMapping("/{idCapteur}")
-	public void updateCapteurCO2(@RequestBody CapteurCO2 capteurCO2, @PathVariable int idCapteur) {
-		if(capteurCO2Service.findByIdCapteurCO2(idCapteur)!=null){
-			capteurCO2Service.addCapteurCO2(capteurCO2);
+	public void updateCapteurLumen(@RequestBody CapteurLumen capteurLumen, @PathVariable int idCapteur) {
+		if(capteurLumenService.findByIdCapteurLumen(idCapteur)!=null){
+			capteurLumenService.addCapteurLumen(capteurLumen);
 		}
 	}
 
 	@DeleteMapping("/{idCapteur}")
 	public void deleteCapteuCO2r(@PathVariable int id) {
-		if(capteurCO2Service.findByIdCapteurCO2(id)!= null){
-			capteurCO2Service.deleteCapteurCO2(capteurCO2Service.findByIdCapteurCO2(id));
+		if(capteurLumenService.findByIdCapteurLumen(id)!= null){
+			capteurLumenService.deleteCapteurLumen(capteurLumenService.findByIdCapteurLumen(id));
 		}
 	}
 
