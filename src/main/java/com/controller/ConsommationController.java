@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.Consommation;
-import com.entity.Installation;
 import com.service.IConsommationService;
 
 @RestController

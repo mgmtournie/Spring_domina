@@ -13,4 +13,11 @@ public interface ICapteurService {
 	public List<Capteur> findByType(String type);
 
 	public List<Capteur> findByPiece(int idPiece);
+	
+	public void addCapteur (Capteur capteur); 
+	
+	public void  updateCapteur (Capteur capteur); 
+	
+	public void deleteCapteur (Capteur Capteur); 
+	
 }

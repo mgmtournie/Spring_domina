@@ -3,9 +3,14 @@ package com.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +42,21 @@ public class CapteurController {
 		return capteurService.findByPiece(idPiece);
 	}
 	
-	//need to add crud 
+	@PostMapping(value = "/addCapteur", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void addCapteur (Capteur capteur){
+		this.capteurService.addCapteur(capteur);
+	}
+	@PutMapping("/{idCapteur}")
+	public void  updateCapteur (@RequestBody Capteur capteur, @PathVariable int idCapteur){
+		if (capteurService.findByIdCapteur(idCapteur)!= null){
+			capteurService.deleteCapteur(capteurService.findByIdCapteur(idCapteur));
+		}
+	}
+	@DeleteMapping("/{idCapteur")
+	public void deleteCapteur (@PathVariable int idCapteur){
+		if (capteurService.findByIdCapteur(idCapteur)!= null){
+			capteurService.deleteCapteur(capteurService.findByIdCapteur(idCapteur));
+		}
+	}
 
 }

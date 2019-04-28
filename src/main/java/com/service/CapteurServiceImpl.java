@@ -33,4 +33,22 @@ public class CapteurServiceImpl implements ICapteurService {
 		return this.capteurDAO.findByPiece(idPiece);
 	}
 
+	@Override
+	public void addCapteur(Capteur capteur) {
+		this.capteurDAO.save(capteur);
+		
+	}
+
+	@Override
+	public void updateCapteur(Capteur capteur) {
+		this.capteurDAO.save(capteur);
+		
+	}
+
+	@Override
+	public void deleteCapteur(Capteur capteur) {
+		this.capteurDAO.delete(capteur);
+		
+	}
+
 }
