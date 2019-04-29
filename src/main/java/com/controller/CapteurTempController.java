@@ -30,12 +30,12 @@ public class CapteurTempController {
 		return this.capteurTempService.getAllCapteursTemp();
 	}
 
-	@GetMapping(value= "/{id}")
+	@GetMapping(value= "/Id/{id}")
 	public CapteurTemp findByIdCapteurTemp(int id) {
 		return this.capteurTempService.findByIdCapteurTemp(id);
 	}
 
-	@GetMapping(value= "/{idpiece}")
+	@GetMapping(value= "/Piece/{idpiece}")
 	public List<CapteurTemp> findByPiece(int idPiece) {
 		return this.capteurTempService.findByPiece(idPiece);
 	}

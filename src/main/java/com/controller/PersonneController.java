@@ -30,34 +30,21 @@ public class PersonneController {
 		return personneService.getAllPersonnes();
 	}
 
-	@GetMapping(value = "/{username}")
+	@GetMapping(value = "/User/{username}")
 	public Personne findByUsername(@PathVariable String username) {
 		return personneService.findByUsername(username);
 	}
 
-	@GetMapping(value = "/{nom}")
+	@GetMapping(value = "/nom/{nom}")
 	public Personne findByNom(@PathVariable String nom) {
 		return personneService.findByNom(nom);
 	}
 
-	//	@GetMapping(value = "/conso{idconsommation}")
-	//	public List<Consommation> verifierConsomation(@PathVariable int idconsomation) {
-	//		return personneService.verifierConsomation(idconsomation);
-	//	}
-
-	// @GetMapping(value = "/capteur{idCapteur}")
-	// public void consulterCapteur(@PathVariable int idCapteur){
-	// return personneService.consulterCapteur(idCapteur);
-	// }
-	//
 	@PostMapping(value = "/adduser", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void addPersonne(@RequestBody Personne personne) {
 		this.personneService.addPersonne(personne);
 	}
 
-	// @PostMapping("/createProg")
-	// public void creerProgramme(Programme programme){
-	// }
 
 	@PutMapping("/{idUser}")
 	public void updatePersonne(@RequestBody Personne personne, @PathVariable int idUser) {
@@ -65,14 +52,7 @@ public class PersonneController {
 			personneService.addPersonne(personne);
 		}
 	}
-	//
-	// @PutMapping("/launchProg{idProgramme}")
-	// public void lancerProgramme(@PathVariable int idProgramme){
-	// }
 
-	// @PutMapping("/stopProg{idProgramme}")
-	// public void lancerProgramme(@PathVariable int idProgramme){
-	// }
 
 	@DeleteMapping("/{id}")
 	public void deleteUser(@PathVariable int id) {

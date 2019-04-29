@@ -31,12 +31,12 @@ public class CapteurHumiditeController {
 		return this.capteurHumiditeService.getAllCapteurHumidites();
 	}
 
-	@GetMapping(value= "/{id}")
+	@GetMapping(value= "/Id/{id}")
 	public  CapteurHumidite findByIdCapteurHumidite(int id) {
 		return this.capteurHumiditeService.findByIdCapteurHumidite(id);
 	}
 
-	@GetMapping(value= "/{idpiece}")
+	@GetMapping(value= "/Piece/{idpiece}")
 	public List<CapteurHumidite> findByPiece(int idPiece) {
 		return this.capteurHumiditeService.findByPiece(idPiece);
 	}

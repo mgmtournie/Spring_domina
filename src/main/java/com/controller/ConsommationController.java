@@ -30,23 +30,18 @@ public class ConsommationController {
 		return consommationService.getAllConsommations();
 	}
 
-	@GetMapping(value = "/{type}")
-	public List<Consommation> findByType(String type) {
-		return consommationService.findByType(type);
-	}
-
-	@GetMapping(value = "/{idpiece}")
+	@GetMapping(value = "/Piece/{idpiece}")
 	public List<Consommation> findByPieces(int idpiece) {
 		return consommationService.findByPieces(idpiece);
 	}
 
-	@GetMapping(value = "/{idinstal}")
+	@GetMapping(value = "/Instal/{idinstal}")
 	public Consommation findByInstal(int idinstal) {
 		return consommationService.findByInstal(idinstal);
 
 	}
 
-	@GetMapping(value = "/{idConsommateur}")
+	@GetMapping(value = "/Id/{idConsommateur}")
 	public Consommation findByIdConsommateur(int idConsommateur) {
 		return consommationService.findByIdConsommateur(idConsommateur);
 	}

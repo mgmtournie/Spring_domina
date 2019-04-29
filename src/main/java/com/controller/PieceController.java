@@ -31,12 +31,12 @@ public class PieceController {
 		return pieceService.getAllPieces();
 	}
 	
-	@GetMapping(value = "/{idPiece}")
+	@GetMapping(value = "/Id/{idPiece}")
 	public Piece findByIdPiece(@PathVariable int idPiece) {
 		return pieceService.findByIdPiece(idPiece);
 	}
 	
-	@GetMapping(value = "/{nomPiece}")
+	@GetMapping(value = "/Nom/{nomPiece}")
 	public Piece findByNomPiece(@PathVariable String nomPiece) {
 		return pieceService.findByNomPiece(nomPiece);
 	}
