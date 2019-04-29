@@ -30,12 +30,12 @@ public class ProgrammeController {
 		return programmeService.getAllProgrammes();
 	}
 	
-	@GetMapping(value = "/{idProg}")
+	@GetMapping(value = "/id{idProg}")
 	public Programme findByIdProg(@PathVariable int idProg) {
 		return programmeService.findByIdProg(idProg);
 	}
 	
-	@GetMapping(value = "/{nomProg}")
+	@GetMapping(value = "/nom{nomProg}")
 	public Programme findByNomProg(@PathVariable String nomProg) {
 		return programmeService.findByNomProg(nomProg);
 	}

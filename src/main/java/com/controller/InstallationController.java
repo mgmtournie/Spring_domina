@@ -35,27 +35,27 @@ public class InstallationController {
 		this.installationService.addInstallation(instal);
 	}
 
-	@GetMapping(value = "/{idInstal}")
+	@GetMapping(value = "/ID/{idInstal}")
 	public Installation findById(@PathVariable int id) {
 		return installationService.findById(id);
 	}
 
-	@GetMapping(value = "/{typeInstal}")
+	@GetMapping(value = "/type/{typeInstal}")
 	public List<Installation> findByType(@PathVariable String type) {
 		return installationService.findByType(type);
 	}
 
-	@GetMapping(value = "/{etatInst}")
+	@GetMapping(value = "/etat/{etatInst}")
 	public List<Installation> findByEtat(@PathVariable boolean etat) {
 		return installationService.findByEtat(etat);
 	}
 
-	@GetMapping(value = "/{piece}")
+	@GetMapping(value = "/piece/{piece}")
 	public List<Installation> findByPiece(@PathVariable int idpiece) {
 		return installationService.findByPiece(idpiece);
 	}
 
-	@GetMapping(value = "/{idProg}")
+	@GetMapping(value = "/IDProg/{idProg}")
 	public List<Installation> findByProgramme(@PathVariable int idprog) {
 		return installationService.findByProgramme(idprog);
 	}

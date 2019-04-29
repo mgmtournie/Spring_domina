@@ -1,0 +1,80 @@
+package com.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.entity.InstalChauffeEau;
+import com.service.IInstalChauffeEauService;
+
+@RestController
+@RequestMapping("/instal/ChauffeEau")
+@CrossOrigin(origins = "http://localhost:8034")
+public class InstalChauffeEauController {
+	
+	@Autowired
+	IInstalChauffeEauService instalChauffeEauService;
+
+	@GetMapping(value = "/all")
+	public List<InstalChauffeEau> getAllInstalChauffeEaus() {
+		return instalChauffeEauService.getAllInstalChauffeEaus();
+	}
+
+	@PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void addInstalChauffeEau(@RequestBody InstalChauffeEau instal) {
+		this.instalChauffeEauService.addInstalChauffeEau(instal);
+	}
+
+	@GetMapping(value = "/ID/{idInstal}")
+	public InstalChauffeEau findById(@PathVariable int id) {
+		return instalChauffeEauService.findById(id);
+	}
+
+	@GetMapping(value = "/etat/{etatInst}")
+	public List<InstalChauffeEau> findByEtat(@PathVariable boolean etat) {
+		return instalChauffeEauService.findByEtat(etat);
+	}
+
+	@GetMapping(value = "/piece/{piece}")
+	public List<InstalChauffeEau> findByPiece(@PathVariable int idpiece) {
+		return instalChauffeEauService.findByPiece(idpiece);
+	}
+
+	@GetMapping(value = "/IDProg/{idProg}")
+	public List<InstalChauffeEau> findByProgramme(@PathVariable int idprog) {
+		return instalChauffeEauService.findByProgramme(idprog);
+	}
+
+	@PutMapping("/{idProg}")
+	public void actived(@RequestBody InstalChauffeEau InstalChauffeEau, @PathVariable int id) {
+		if (instalChauffeEauService.findById(id) != null) {
+			instalChauffeEauService.addInstalChauffeEau(InstalChauffeEau);
+		}
+
+	}
+
+	@PutMapping("/{idInstal}")
+	public void updateInstalChauffeEau(@RequestBody InstalChauffeEau InstalChauffeEau, @PathVariable int idInstal) {
+		if (instalChauffeEauService.findById(idInstal) != null) {
+			instalChauffeEauService.addInstalChauffeEau(InstalChauffeEau);
+		}
+	}
+
+	@DeleteMapping(value = "/{idInstall}")
+	public void deleteInstalChauffeEau(@PathVariable int idInstall) {
+		if (instalChauffeEauService.findById(idInstall) != null) {
+			instalChauffeEauService.deleteInstalChauffeEau(instalChauffeEauService.findById(idInstall));
+		}
+	}
+
+}
