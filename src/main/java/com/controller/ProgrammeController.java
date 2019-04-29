@@ -29,12 +29,12 @@ public class ProgrammeController {
 	public List<Programme> getAllProgrammes() {
 		return programmeService.getAllProgrammes();
 	}
-	
-	@GetMapping(value = "/Id/{idProg}")
+
+	@GetMapping(value = "/ID/{idProg}")
 	public Programme findByIdProg(@PathVariable int idProg) {
 		return programmeService.findByIdProg(idProg);
 	}
-	
+
 	@GetMapping(value = "/Nom/{nomProg}")
 	public Programme findByNomProg(@PathVariable String nomProg) {
 		return programmeService.findByNomProg(nomProg);
@@ -54,7 +54,7 @@ public class ProgrammeController {
 
 	@DeleteMapping("/{idProg}")
 	public void deleteUser(@PathVariable int idProg) {
-	if(programmeService.findByIdProg(idProg)!=null){
+		if (programmeService.findByIdProg(idProg) != null) {
 			programmeService.deleteProgramme(programmeService.findByIdProg(idProg));
 		}
 	}

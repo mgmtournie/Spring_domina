@@ -8,14 +8,12 @@ import org.springframework.stereotype.Repository;
 import com.entity.Capteur;
 
 @Repository
-public interface CapteurDAO extends JpaRepository<Capteur, Integer>{
-	
-	 public Capteur findByIdCapteur (int idCapteur);
-	 
-	 public  List<Capteur> findByPiece (int idPiece); 
-	 
-	 public List<Capteur> findByType (String type); 
-	 
-	 
+public interface CapteurDAO extends JpaRepository<Capteur, Integer> {
+
+	public Capteur findByIdCapteur(int idCapteur);
+
+	public List<Capteur> findByPiece(int idPiece);
+
+	public List<Capteur> findByType(String type);
 
 }

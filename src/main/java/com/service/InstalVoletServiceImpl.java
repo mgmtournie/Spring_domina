@@ -9,7 +9,7 @@ import com.DAO.InstalVoletDAO;
 import com.entity.InstalVolet;
 
 @Service
-public class InstalVoletServiceImpl implements IInstalVoletService{
+public class InstalVoletServiceImpl implements IInstalVoletService {
 
 	@Autowired
 	InstalVoletDAO instalVoletDAO;
@@ -17,22 +17,17 @@ public class InstalVoletServiceImpl implements IInstalVoletService{
 	@Override
 	public void addInstalVolet(InstalVolet instal) {
 		this.instalVoletDAO.save(instal);
-		
+
 	}
 
 	@Override
-	public List<InstalVolet> getAllInstalVolets() {
+	public List<InstalVolet> getAllInstalsVolet() {
 		return this.instalVoletDAO.findAll();
 	}
 
 	@Override
 	public InstalVolet findById(int id) {
 		return this.instalVoletDAO.findById(id);
-	}
-
-	@Override
-	public List<InstalVolet> findByType(String type) {
-		return this.instalVoletDAO.findByType(type);
 	}
 
 	@Override
@@ -46,27 +41,26 @@ public class InstalVoletServiceImpl implements IInstalVoletService{
 	}
 
 	@Override
-	public List<InstalVolet> findByProgramme(int idprog) {
+	public List<InstalVolet> findByProgrammes(int idprog) {
 		return this.instalVoletDAO.findByProgrammes(idprog);
 	}
 
 	@Override
 	public void actived(InstalVolet instal) {
 		this.instalVoletDAO.save(instal);
-		
+
 	}
 
 	@Override
 	public void updateInstalVolet(InstalVolet instal) {
 		this.instalVoletDAO.save(instal);
-		
+
 	}
 
 	@Override
 	public void deleteInstalVolet(InstalVolet instal) {
 		this.instalVoletDAO.delete(instal);
-		
-	}
 
+	}
 
 }

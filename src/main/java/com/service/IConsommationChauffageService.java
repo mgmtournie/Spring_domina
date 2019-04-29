@@ -6,7 +6,7 @@ import com.entity.ConsommationChauffage;
 
 public interface IConsommationChauffageService {
 
-	public List<ConsommationChauffage> getAllConsommationChauffages();
+	public List<ConsommationChauffage> getAllConsommationsChauffage();
 
 	public List<ConsommationChauffage> findByPieces(int idpiece);
 

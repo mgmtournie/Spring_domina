@@ -21,13 +21,13 @@ import com.service.IInstalChauffeEauService;
 @RequestMapping("/instal/ChauffeEau")
 @CrossOrigin(origins = "http://localhost:8034")
 public class InstalChauffeEauController {
-	
+
 	@Autowired
 	IInstalChauffeEauService instalChauffeEauService;
 
 	@GetMapping(value = "/all")
-	public List<InstalChauffeEau> getAllInstalChauffeEaus() {
-		return instalChauffeEauService.getAllInstalChauffeEaus();
+	public List<InstalChauffeEau> getAllInstalsChauffeEau() {
+		return instalChauffeEauService.getAllInstalsChauffeEau();
 	}
 
 	@PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -36,28 +36,28 @@ public class InstalChauffeEauController {
 	}
 
 	@GetMapping(value = "/ID/{idInstal}")
-	public InstalChauffeEau findById(@PathVariable int id) {
-		return instalChauffeEauService.findById(id);
+	public InstalChauffeEau findById(@PathVariable int idInstal) {
+		return instalChauffeEauService.findById(idInstal);
 	}
 
-	@GetMapping(value = "/etat/{etatInst}")
+	@GetMapping(value = "/etat/{etat}")
 	public List<InstalChauffeEau> findByEtat(@PathVariable boolean etat) {
 		return instalChauffeEauService.findByEtat(etat);
 	}
 
-	@GetMapping(value = "/piece/{piece}")
+	@GetMapping(value = "/piece/{idpiece}")
 	public List<InstalChauffeEau> findByPiece(@PathVariable int idpiece) {
 		return instalChauffeEauService.findByPiece(idpiece);
 	}
 
 	@GetMapping(value = "/IDProg/{idProg}")
-	public List<InstalChauffeEau> findByProgramme(@PathVariable int idprog) {
-		return instalChauffeEauService.findByProgramme(idprog);
+	public List<InstalChauffeEau> findByProgramme(@PathVariable int idProg) {
+		return instalChauffeEauService.findByProgrammes(idProg);
 	}
 
 	@PutMapping("/{idProg}")
-	public void actived(@RequestBody InstalChauffeEau InstalChauffeEau, @PathVariable int id) {
-		if (instalChauffeEauService.findById(id) != null) {
+	public void actived(@RequestBody InstalChauffeEau InstalChauffeEau, @PathVariable int idProg) {
+		if (instalChauffeEauService.findById(idProg) != null) {
 			instalChauffeEauService.addInstalChauffeEau(InstalChauffeEau);
 		}
 

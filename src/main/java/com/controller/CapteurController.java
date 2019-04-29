@@ -21,40 +21,45 @@ import com.service.ICapteurService;
 @RequestMapping("/capteur")
 @CrossOrigin(origins = "http://localhost:8034")
 public class CapteurController {
-	
+
 	@Autowired
-	ICapteurService capteurService; 
-	
-	@GetMapping(value= "/all")
-	public List<Capteur> getAllCapteurs(){
+	ICapteurService capteurService;
+
+	@GetMapping(value = "/all")
+	public List<Capteur> getAllCapteurs() {
 		return capteurService.getAllCapteurs();
 	}
-	@GetMapping(value= "/Id{id}")
-	public Capteur findByIdCapteur(int id){
+
+	@GetMapping(value = "/ID/{id}")
+	public Capteur findByIdCapteur(@PathVariable int id) {
 		return capteurService.findByIdCapteur(id);
 	}
-	@GetMapping(value= "/Type{type}")
-	public List<Capteur> findByType(String type){
+
+	@GetMapping(value = "/Type/{type}")
+	public List<Capteur> findByType(@PathVariable String type) {
 		return capteurService.findByType(type);
 	}
-	@GetMapping(value= "/Piece{idpiece}")
-	public List<Capteur> findByPiece(int idPiece){
+
+	@GetMapping(value = "/Piece/{idPiece}")
+	public List<Capteur> findByPiece(@PathVariable int idPiece) {
 		return capteurService.findByPiece(idPiece);
 	}
-	
+
 	@PostMapping(value = "/addCapteur", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void addCapteur (Capteur capteur){
+	public void addCapteur(Capteur capteur) {
 		this.capteurService.addCapteur(capteur);
 	}
+
 	@PutMapping("/{idCapteur}")
-	public void  updateCapteur (@RequestBody Capteur capteur, @PathVariable int idCapteur){
-		if (capteurService.findByIdCapteur(idCapteur)!= null){
+	public void updateCapteur(@RequestBody Capteur capteur, @PathVariable int idCapteur) {
+		if (capteurService.findByIdCapteur(idCapteur) != null) {
 			capteurService.addCapteur(capteur);
 		}
 	}
+
 	@DeleteMapping("/{idCapteur}")
-	public void deleteCapteur (@PathVariable int idCapteur){
-		if (capteurService.findByIdCapteur(idCapteur)!= null){
+	public void deleteCapteur(@PathVariable int idCapteur) {
+		if (capteurService.findByIdCapteur(idCapteur) != null) {
 			capteurService.deleteCapteur(capteurService.findByIdCapteur(idCapteur));
 		}
 	}

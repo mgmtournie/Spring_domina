@@ -6,7 +6,7 @@ import com.entity.ConsommationEau;
 
 public interface IConsommationEauService {
 
-	public List<ConsommationEau> getAllConsommationEaus();
+	public List<ConsommationEau> getAllConsommationsEau();
 
 	public List<ConsommationEau> findByPieces(int idpiece);
 

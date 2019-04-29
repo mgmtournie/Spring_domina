@@ -6,7 +6,7 @@ import com.entity.ConsommationElec;
 
 public interface IConsommationElecService {
 
-	public List<ConsommationElec> getAllConsommationElecs();
+	public List<ConsommationElec> getAllConsommationsElec();
 
 	public List<ConsommationElec> findByPieces(int idpiece);
 

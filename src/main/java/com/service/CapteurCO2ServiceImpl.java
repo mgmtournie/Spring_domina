@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.DAO.CapteurCO2SDAO;
+import com.DAO.CapteurCO2DAO;
 import com.entity.CapteurCO2;
 
 @Service
 public class CapteurCO2ServiceImpl implements ICapteurCO2Service {
 
 	@Autowired
-	CapteurCO2SDAO capteurCO2DAO;
+	CapteurCO2DAO capteurCO2DAO;
 
 	@Override
 	public List<CapteurCO2> getAllCapteursCO2() {
@@ -20,7 +20,7 @@ public class CapteurCO2ServiceImpl implements ICapteurCO2Service {
 	}
 
 	@Override
-	public CapteurCO2 findByIdCapteurCO2(int id) {
+	public CapteurCO2 findByIdCapteur(int id) {
 		return this.capteurCO2DAO.findByIdCapteur(id);
 	}
 

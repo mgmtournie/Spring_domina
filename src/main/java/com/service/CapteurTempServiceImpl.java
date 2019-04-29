@@ -21,7 +21,7 @@ public class CapteurTempServiceImpl implements ICapteurTempService {
 	}
 
 	@Override
-	public CapteurTemp findByIdCapteurTemp(int id) {
+	public CapteurTemp findByIdCapteur(int id) {
 		return this.capteurTempDAO.findByIdCapteur(id);
 	}
 

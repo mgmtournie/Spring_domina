@@ -14,30 +14,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.entity.CapteurHumidite;
 import com.service.ICapteurHumiditeService;
 
 @RestController
-@RequestMapping("/capteur/humidite")
+@RequestMapping("/capteur/Humidite")
 @CrossOrigin(origins = "http://localhost:8034")
 public class CapteurHumiditeController {
-	
+
 	@Autowired
-	ICapteurHumiditeService capteurHumiditeService; 
-	
-	@GetMapping(value= "/all")
-	public List<CapteurHumidite> getAllCapteursCO2() {
-		return this.capteurHumiditeService.getAllCapteurHumidites();
+	ICapteurHumiditeService capteurHumiditeService;
+
+	@GetMapping(value = "/all")
+	public List<CapteurHumidite> getAllCapteursHumidite() {
+		return this.capteurHumiditeService.getAllCapteursHumidite();
 	}
 
-	@GetMapping(value= "/Id/{id}")
-	public  CapteurHumidite findByIdCapteurHumidite(int id) {
-		return this.capteurHumiditeService.findByIdCapteurHumidite(id);
+	@GetMapping(value = "/ID/{id}")
+	public CapteurHumidite findByIdCapteur(@PathVariable int id) {
+		return this.capteurHumiditeService.findByIdCapteur(id);
 	}
 
-	@GetMapping(value= "/Piece/{idpiece}")
-	public List<CapteurHumidite> findByPiece(int idPiece) {
+	@GetMapping(value = "/Piece/{idPiece}")
+	public List<CapteurHumidite> findByPiece(@PathVariable int idPiece) {
 		return this.capteurHumiditeService.findByPiece(idPiece);
 	}
 
@@ -48,17 +47,16 @@ public class CapteurHumiditeController {
 
 	@PutMapping("/{idCapteur}")
 	public void updateCapteurHumidite(@RequestBody CapteurHumidite capteurHumidite, @PathVariable int idCapteur) {
-		if(capteurHumiditeService.findByIdCapteurHumidite(idCapteur)!=null){
+		if (capteurHumiditeService.findByIdCapteur(idCapteur) != null) {
 			capteurHumiditeService.addCapteurHumidite(capteurHumidite);
 		}
 	}
 
 	@DeleteMapping("/{idCapteur}")
-	public void deleteCapteuCO2r(@PathVariable int id) {
-		if(capteurHumiditeService.findByIdCapteurHumidite(id)!= null){
-			capteurHumiditeService.deleteCapteurHumidite(capteurHumiditeService.findByIdCapteurHumidite(id));
+	public void deleteCapteurHumidite(@PathVariable int idCapteur) {
+		if (capteurHumiditeService.findByIdCapteur(idCapteur) != null) {
+			capteurHumiditeService.deleteCapteurHumidite(capteurHumiditeService.findByIdCapteur(idCapteur));
 		}
 	}
-
 
 }

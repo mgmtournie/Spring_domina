@@ -9,8 +9,6 @@ import com.entity.InstalVMC;
 
 @Repository
 public interface InstalVMCDAO extends JpaRepository<InstalVMC, Double> {
-	
-	public List<InstalVMC> findByType(String type);
 
 	public List<InstalVMC> findByPiece(int idpiece);
 

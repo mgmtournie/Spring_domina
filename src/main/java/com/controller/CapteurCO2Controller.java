@@ -21,22 +21,22 @@ import com.service.ICapteurCO2Service;
 @RequestMapping("/capteur/CO2")
 @CrossOrigin(origins = "http://localhost:8034")
 public class CapteurCO2Controller {
-	
+
 	@Autowired
-	ICapteurCO2Service capteurCO2Service; 
-	
-	@GetMapping(value= "/all")
+	ICapteurCO2Service capteurCO2Service;
+
+	@GetMapping(value = "/all")
 	public List<CapteurCO2> getAllCapteursCO2() {
 		return this.capteurCO2Service.getAllCapteursCO2();
 	}
 
-	@GetMapping(value= "/ID/{id}")
-	public CapteurCO2 findByIdCapteurCO2(int id) {
-		return this.capteurCO2Service.findByIdCapteurCO2(id);
+	@GetMapping(value = "/ID/{id}")
+	public CapteurCO2 findByIdCapteur(@PathVariable int id) {
+		return this.capteurCO2Service.findByIdCapteur(id);
 	}
 
-	@GetMapping(value= "/Piece/{idpiece}")
-	public List<CapteurCO2> findByPiece(int idPiece) {
+	@GetMapping(value = "/Piece/{idPiece}")
+	public List<CapteurCO2> findByPiece(@PathVariable int idPiece) {
 		return this.capteurCO2Service.findByPiece(idPiece);
 	}
 
@@ -47,17 +47,16 @@ public class CapteurCO2Controller {
 
 	@PutMapping("/{idCapteur}")
 	public void updateCapteurCO2(@RequestBody CapteurCO2 capteurCO2, @PathVariable int idCapteur) {
-		if(capteurCO2Service.findByIdCapteurCO2(idCapteur)!=null){
+		if (capteurCO2Service.findByIdCapteur(idCapteur) != null) {
 			capteurCO2Service.addCapteurCO2(capteurCO2);
 		}
 	}
 
 	@DeleteMapping("/{idCapteur}")
-	public void deleteCapteuCO2r(@PathVariable int id) {
-		if(capteurCO2Service.findByIdCapteurCO2(id)!= null){
-			capteurCO2Service.deleteCapteurCO2(capteurCO2Service.findByIdCapteurCO2(id));
+	public void deleteCapteurCO2(@PathVariable int idCapteur) {
+		if (capteurCO2Service.findByIdCapteur(idCapteur) != null) {
+			capteurCO2Service.deleteCapteurCO2(capteurCO2Service.findByIdCapteur(idCapteur));
 		}
 	}
-
 
 }

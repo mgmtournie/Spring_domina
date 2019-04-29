@@ -8,7 +8,7 @@ public interface ICapteurTempService {
 
 	public List<CapteurTemp> getAllCapteursTemp();
 
-	public CapteurTemp findByIdCapteurTemp(int id);
+	public CapteurTemp findByIdCapteur(int id);
 
 	public List<CapteurTemp> findByPiece(int idPiece);
 

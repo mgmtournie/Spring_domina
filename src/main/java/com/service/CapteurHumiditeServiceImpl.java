@@ -9,20 +9,20 @@ import com.DAO.CapteurHumiditeDAO;
 import com.entity.CapteurHumidite;
 
 @Service
-public class CapteurHumiditeServiceImpl implements ICapteurHumiditeService{
+public class CapteurHumiditeServiceImpl implements ICapteurHumiditeService {
 
 	@Autowired
 	CapteurHumiditeDAO capteurHumidite;
-	
+
 	@Override
-	public List<CapteurHumidite> getAllCapteurHumidites() {
-		
+	public List<CapteurHumidite> getAllCapteursHumidite() {
+
 		return this.capteurHumidite.findAll();
 	}
 
 	@Override
-	public CapteurHumidite findByIdCapteurHumidite(int id) {
-			return this.capteurHumidite.findByIdCapteur(id);
+	public CapteurHumidite findByIdCapteur(int id) {
+		return this.capteurHumidite.findByIdCapteur(id);
 	}
 
 	@Override
@@ -33,19 +33,19 @@ public class CapteurHumiditeServiceImpl implements ICapteurHumiditeService{
 	@Override
 	public void addCapteurHumidite(CapteurHumidite capteurHumidite) {
 		this.capteurHumidite.save(capteurHumidite);
-		
+
 	}
 
 	@Override
 	public void updateCapteurHumidite(CapteurHumidite capteurHumidite) {
 		this.capteurHumidite.save(capteurHumidite);
-		
+
 	}
 
 	@Override
 	public void deleteCapteurHumidite(CapteurHumidite capteurHumidite) {
 		this.capteurHumidite.delete(capteurHumidite);
-		
+
 	}
 
 }

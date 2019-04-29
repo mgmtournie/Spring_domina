@@ -8,13 +8,12 @@ import org.springframework.stereotype.Repository;
 import com.entity.ConsommationEau;
 
 @Repository
-public interface ConsommationEauDAO extends JpaRepository<ConsommationEau, Integer>{
+public interface ConsommationEauDAO extends JpaRepository<ConsommationEau, Integer> {
 
-	public ConsommationEau findByIdConsommateur(int idConso); 
-	
-	public List<ConsommationEau> findByPieces(int idPiece); 
-	
+	public ConsommationEau findByIdConsommateur(int idConso);
+
+	public List<ConsommationEau> findByPieces(int idPiece);
+
 	public ConsommationEau findByInstal(int idinstal);
-	
 
 }

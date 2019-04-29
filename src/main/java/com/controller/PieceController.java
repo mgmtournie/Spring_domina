@@ -17,12 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.entity.Piece;
 import com.service.IPieceService;
 
-
 @RestController
 @RequestMapping("/piece")
 @CrossOrigin(origins = "http://localhost:8034")
 public class PieceController {
-	
+
 	@Autowired
 	IPieceService pieceService;
 
@@ -30,12 +29,12 @@ public class PieceController {
 	public List<Piece> getAllPieces() {
 		return pieceService.getAllPieces();
 	}
-	
-	@GetMapping(value = "/Id/{idPiece}")
+
+	@GetMapping(value = "/ID/{idPiece}")
 	public Piece findByIdPiece(@PathVariable int idPiece) {
 		return pieceService.findByIdPiece(idPiece);
 	}
-	
+
 	@GetMapping(value = "/Nom/{nomPiece}")
 	public Piece findByNomPiece(@PathVariable String nomPiece) {
 		return pieceService.findByNomPiece(nomPiece);
@@ -55,7 +54,7 @@ public class PieceController {
 
 	@DeleteMapping("/{idPiece}")
 	public void deletePiece(@PathVariable int idPiece) {
-	if(pieceService.findByIdPiece(idPiece)!=null){
+		if (pieceService.findByIdPiece(idPiece) != null) {
 			pieceService.deletePiece(pieceService.findByIdPiece(idPiece));
 		}
 	}

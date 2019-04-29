@@ -15,7 +15,7 @@ public class ConsommationChauffageServiceImpl implements IConsommationChauffageS
 	ConsommationChauffageDAO ConsommationChauffageDAO;
 
 	@Override
-	public List<ConsommationChauffage> getAllConsommationChauffages() {
+	public List<ConsommationChauffage> getAllConsommationsChauffage() {
 		return this.ConsommationChauffageDAO.findAll();
 	}
 
@@ -37,19 +37,19 @@ public class ConsommationChauffageServiceImpl implements IConsommationChauffageS
 	@Override
 	public void addConsommationChauffage(ConsommationChauffage ConsommationChauffage) {
 		this.ConsommationChauffageDAO.save(ConsommationChauffage);
-		
+
 	}
 
 	@Override
 	public void deleteConsommationChauffage(ConsommationChauffage ConsommationChauffage) {
 		this.ConsommationChauffageDAO.delete(ConsommationChauffage);
-		
+
 	}
 
 	@Override
 	public void updateConsommationChauffage(ConsommationChauffage ConsommationChauffage) {
 		this.ConsommationChauffageDAO.save(ConsommationChauffage);
-		
+
 	}
 
 }

@@ -15,7 +15,7 @@ public class ConsommationEauServiceImpl implements IConsommationEauService {
 	ConsommationEauDAO ConsommationEauDAO;
 
 	@Override
-	public List<ConsommationEau> getAllConsommationEaus() {
+	public List<ConsommationEau> getAllConsommationsEau() {
 		return this.ConsommationEauDAO.findAll();
 	}
 
@@ -34,23 +34,22 @@ public class ConsommationEauServiceImpl implements IConsommationEauService {
 		return this.ConsommationEauDAO.findByIdConsommateur(idConsommateur);
 	}
 
-
 	@Override
 	public void addConsommationEau(ConsommationEau ConsommationEau) {
 		this.ConsommationEauDAO.save(ConsommationEau);
-		
+
 	}
 
 	@Override
 	public void deleteConsommationEau(ConsommationEau ConsommationEau) {
 		this.ConsommationEauDAO.delete(ConsommationEau);
-		
+
 	}
 
 	@Override
 	public void updateConsommationEau(ConsommationEau ConsommationEau) {
 		this.ConsommationEauDAO.save(ConsommationEau);
-		
+
 	}
 
 }

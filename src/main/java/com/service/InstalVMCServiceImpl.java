@@ -17,22 +17,17 @@ public class InstalVMCServiceImpl implements IInstalVMCService {
 	@Override
 	public void addInstalVMC(InstalVMC instal) {
 		this.instalVMCDAO.save(instal);
-		
+
 	}
 
 	@Override
-	public List<InstalVMC> getAllInstalVMCs() {
+	public List<InstalVMC> getAllInstalsVMC() {
 		return this.instalVMCDAO.findAll();
 	}
 
 	@Override
 	public InstalVMC findById(int id) {
 		return this.instalVMCDAO.findById(id);
-	}
-
-	@Override
-	public List<InstalVMC> findByType(String type) {
-		return this.instalVMCDAO.findByType(type);
 	}
 
 	@Override
@@ -46,26 +41,26 @@ public class InstalVMCServiceImpl implements IInstalVMCService {
 	}
 
 	@Override
-	public List<InstalVMC> findByProgramme(int idprog) {
+	public List<InstalVMC> findByProgrammes(int idprog) {
 		return this.instalVMCDAO.findByProgrammes(idprog);
 	}
 
 	@Override
 	public void actived(InstalVMC instal) {
 		this.instalVMCDAO.save(instal);
-		
+
 	}
 
 	@Override
 	public void updateInstalVMC(InstalVMC instal) {
 		this.instalVMCDAO.save(instal);
-		
+
 	}
 
 	@Override
 	public void deleteInstalVMC(InstalVMC instal) {
 		this.instalVMCDAO.delete(instal);
-		
+
 	}
 
 }

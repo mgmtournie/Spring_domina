@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.CapteurDAO;
 import com.entity.Capteur;
+
 @Service
 public class CapteurServiceImpl implements ICapteurService {
 
@@ -36,19 +37,19 @@ public class CapteurServiceImpl implements ICapteurService {
 	@Override
 	public void addCapteur(Capteur capteur) {
 		this.capteurDAO.save(capteur);
-		
+
 	}
 
 	@Override
 	public void updateCapteur(Capteur capteur) {
 		this.capteurDAO.save(capteur);
-		
+
 	}
 
 	@Override
 	public void deleteCapteur(Capteur capteur) {
 		this.capteurDAO.delete(capteur);
-		
+
 	}
 
 }

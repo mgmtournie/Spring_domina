@@ -27,7 +27,7 @@ public class InstalVoletController {
 
 	@GetMapping(value = "/all")
 	public List<InstalVolet> getAllInstalVolets() {
-		return instalVoletService.getAllInstalVolets();
+		return instalVoletService.getAllInstalsVolet();
 	}
 
 	@PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -36,28 +36,28 @@ public class InstalVoletController {
 	}
 
 	@GetMapping(value = "/ID/{idInstal}")
-	public InstalVolet findById(@PathVariable int id) {
-		return instalVoletService.findById(id);
+	public InstalVolet findById(@PathVariable int idInstal) {
+		return instalVoletService.findById(idInstal);
 	}
 
-	@GetMapping(value = "/etat/{etatInst}")
+	@GetMapping(value = "/etat/{etat}")
 	public List<InstalVolet> findByEtat(@PathVariable boolean etat) {
 		return instalVoletService.findByEtat(etat);
 	}
 
-	@GetMapping(value = "/piece/{piece}")
+	@GetMapping(value = "/piece/{idpiece}")
 	public List<InstalVolet> findByPiece(@PathVariable int idpiece) {
 		return instalVoletService.findByPiece(idpiece);
 	}
 
-	@GetMapping(value = "/IDProg/{idProg}")
+	@GetMapping(value = "/IDProg/{idprog}")
 	public List<InstalVolet> findByProgramme(@PathVariable int idprog) {
-		return instalVoletService.findByProgramme(idprog);
+		return instalVoletService.findByProgrammes(idprog);
 	}
 
 	@PutMapping("/{idProg}")
-	public void actived(@RequestBody InstalVolet InstalVolet, @PathVariable int id) {
-		if (instalVoletService.findById(id) != null) {
+	public void actived(@RequestBody InstalVolet InstalVolet, @PathVariable int idProg) {
+		if (instalVoletService.findById(idProg) != null) {
 			instalVoletService.addInstalVolet(InstalVolet);
 		}
 

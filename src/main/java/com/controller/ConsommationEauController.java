@@ -18,7 +18,7 @@ import com.entity.ConsommationEau;
 import com.service.IConsommationEauService;
 
 @RestController
-@RequestMapping("/consoEau")
+@RequestMapping("/conso/Eau")
 @CrossOrigin(origins = "http://localhost:8034")
 public class ConsommationEauController {
 
@@ -26,23 +26,23 @@ public class ConsommationEauController {
 	IConsommationEauService ConsommationEauService;
 
 	@GetMapping(value = "/all")
-	public List<ConsommationEau> getAllConsommationEaus() {
-		return ConsommationEauService.getAllConsommationEaus();
+	public List<ConsommationEau> getAllConsommationsEau() {
+		return ConsommationEauService.getAllConsommationsEau();
 	}
 
 	@GetMapping(value = "/Piece/{idpiece}")
-	public List<ConsommationEau> findByPieces(int idpiece) {
+	public List<ConsommationEau> findByPieces(@PathVariable int idpiece) {
 		return ConsommationEauService.findByPieces(idpiece);
 	}
 
 	@GetMapping(value = "/Instal/{idinstal}")
-	public ConsommationEau findByInstal(int idinstal) {
+	public ConsommationEau findByInstal(@PathVariable int idinstal) {
 		return ConsommationEauService.findByInstal(idinstal);
 
 	}
 
-	@GetMapping(value = "/Id/{idConsommateur}")
-	public ConsommationEau findByIdConsommateur(int idConsommateur) {
+	@GetMapping(value = "/ID/{idConsommateur}")
+	public ConsommationEau findByIdConsommateur(@PathVariable int idConsommateur) {
 		return ConsommationEauService.findByIdConsommateur(idConsommateur);
 	}
 
@@ -52,16 +52,16 @@ public class ConsommationEauController {
 
 	}
 
-	@DeleteMapping(value="/{idCons}")
+	@DeleteMapping(value = "/{idCons}")
 	public void deleteConsommationEau(@PathVariable int idCons) {
-		if (ConsommationEauService.findByIdConsommateur(idCons)!= null){
+		if (ConsommationEauService.findByIdConsommateur(idCons) != null) {
 			ConsommationEauService.deleteConsommationEau(ConsommationEauService.findByIdConsommateur(idCons));
-			}
 		}
+	}
 
 	@PutMapping("/{idCons}")
-	public void updateConsommationEau(@RequestBody ConsommationEau ConsommationEau , @PathVariable int idCons) {
-		if( ConsommationEauService.findByIdConsommateur(idCons)!= null){
+	public void updateConsommationEau(@RequestBody ConsommationEau ConsommationEau, @PathVariable int idCons) {
+		if (ConsommationEauService.findByIdConsommateur(idCons) != null) {
 			ConsommationEauService.addConsommationEau(ConsommationEau);
 		}
 

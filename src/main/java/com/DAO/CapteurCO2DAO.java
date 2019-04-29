@@ -8,13 +8,10 @@ import org.springframework.stereotype.Repository;
 import com.entity.CapteurCO2;
 
 @Repository
-public interface CapteurCO2SDAO extends JpaRepository<CapteurCO2, Integer> {
-	
+public interface CapteurCO2DAO extends JpaRepository<CapteurCO2, Integer> {
 
 	public CapteurCO2 findByIdCapteur(int idCapteur);
 
 	public List<CapteurCO2> findByPiece(int idPiece);
-
-	
 
 }

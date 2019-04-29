@@ -21,13 +21,13 @@ import com.service.IInstalChauffageService;
 @RequestMapping("/instal/Chauffage")
 @CrossOrigin(origins = "http://localhost:8034")
 public class InstalChauffageController {
-	
+
 	@Autowired
 	IInstalChauffageService instalChauffageService;
 
 	@GetMapping(value = "/all")
-	public List<InstalChauffage> getAllInstalChauffages() {
-		return instalChauffageService.getAllInstalChauffages();
+	public List<InstalChauffage> getAllInstalsChauffage() {
+		return instalChauffageService.getAllInstalsChauffage();
 	}
 
 	@PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -36,28 +36,28 @@ public class InstalChauffageController {
 	}
 
 	@GetMapping(value = "/ID/{idInstal}")
-	public InstalChauffage findById(@PathVariable int id) {
-		return instalChauffageService.findById(id);
+	public InstalChauffage findById(@PathVariable int idInstal) {
+		return instalChauffageService.findById(idInstal);
 	}
 
-	@GetMapping(value = "/etat/{etatInst}")
+	@GetMapping(value = "/etat/{etat}")
 	public List<InstalChauffage> findByEtat(@PathVariable boolean etat) {
 		return instalChauffageService.findByEtat(etat);
 	}
 
-	@GetMapping(value = "/piece/{piece}")
+	@GetMapping(value = "/piece/{idpiece}")
 	public List<InstalChauffage> findByPiece(@PathVariable int idpiece) {
 		return instalChauffageService.findByPiece(idpiece);
 	}
 
-	@GetMapping(value = "/IDProg/{idProg}")
+	@GetMapping(value = "/IDProg/{idprog}")
 	public List<InstalChauffage> findByProgramme(@PathVariable int idprog) {
 		return instalChauffageService.findByProgramme(idprog);
 	}
 
 	@PutMapping("/{idProg}")
-	public void actived(@RequestBody InstalChauffage InstalChauffage, @PathVariable int id) {
-		if (instalChauffageService.findById(id) != null) {
+	public void actived(@RequestBody InstalChauffage InstalChauffage, @PathVariable int idProg) {
+		if (instalChauffageService.findById(idProg) != null) {
 			instalChauffageService.addInstalChauffage(InstalChauffage);
 		}
 

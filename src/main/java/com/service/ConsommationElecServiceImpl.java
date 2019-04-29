@@ -15,7 +15,7 @@ public class ConsommationElecServiceImpl implements IConsommationElecService {
 	ConsommationElecDAO ConsommationElecDAO;
 
 	@Override
-	public List<ConsommationElec> getAllConsommationElecs() {
+	public List<ConsommationElec> getAllConsommationsElec() {
 		return this.ConsommationElecDAO.findAll();
 	}
 
@@ -34,23 +34,22 @@ public class ConsommationElecServiceImpl implements IConsommationElecService {
 		return this.ConsommationElecDAO.findByIdConsommateur(idConsommateur);
 	}
 
-
 	@Override
 	public void addConsommationElec(ConsommationElec ConsommationElec) {
 		this.ConsommationElecDAO.save(ConsommationElec);
-		
+
 	}
 
 	@Override
 	public void deleteConsommationElec(ConsommationElec ConsommationElec) {
 		this.ConsommationElecDAO.delete(ConsommationElec);
-		
+
 	}
 
 	@Override
 	public void updateConsommationElec(ConsommationElec ConsommationElec) {
 		this.ConsommationElecDAO.save(ConsommationElec);
-		
+
 	}
 
 }

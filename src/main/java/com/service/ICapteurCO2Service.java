@@ -8,7 +8,7 @@ public interface ICapteurCO2Service {
 
 	public List<CapteurCO2> getAllCapteursCO2();
 
-	public CapteurCO2 findByIdCapteurCO2(int id);
+	public CapteurCO2 findByIdCapteur(int id);
 
 	public List<CapteurCO2> findByPiece(int idPiece);
 

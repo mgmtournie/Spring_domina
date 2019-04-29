@@ -18,7 +18,7 @@ import com.entity.ConsommationChauffage;
 import com.service.IConsommationChauffageService;
 
 @RestController
-@RequestMapping("/consoChauffage")
+@RequestMapping("/conso/Chauffage")
 @CrossOrigin(origins = "http://localhost:8034")
 public class ConsommationChauffageController {
 
@@ -26,23 +26,23 @@ public class ConsommationChauffageController {
 	IConsommationChauffageService ConsommationChauffageService;
 
 	@GetMapping(value = "/all")
-	public List<ConsommationChauffage> getAllConsommationChauffages() {
-		return ConsommationChauffageService.getAllConsommationChauffages();
+	public List<ConsommationChauffage> getAllConsommationsChauffage() {
+		return ConsommationChauffageService.getAllConsommationsChauffage();
 	}
 
-	@GetMapping(value = "/Piece/{idpiece}")
-	public List<ConsommationChauffage> findByPieces(int idpiece) {
-		return ConsommationChauffageService.findByPieces(idpiece);
+	@GetMapping(value = "/Piece/{idPiece}")
+	public List<ConsommationChauffage> findByPieces(@PathVariable int idPiece) {
+		return ConsommationChauffageService.findByPieces(idPiece);
 	}
 
-	@GetMapping(value = "/Instal/{idinstal}")
-	public ConsommationChauffage findByInstal(int idinstal) {
-		return ConsommationChauffageService.findByInstal(idinstal);
+	@GetMapping(value = "/ID/{idInstal}")
+	public ConsommationChauffage findByInstal(@PathVariable int idInstal) {
+		return ConsommationChauffageService.findByInstal(idInstal);
 
 	}
 
-	@GetMapping(value = "/Id/{idConsommateur}")
-	public ConsommationChauffage findByIdConsommateur(int idConsommateur) {
+	@GetMapping(value = "/IDConso/{idConsommateur}")
+	public ConsommationChauffage findByIdConsommateur(@PathVariable int idConsommateur) {
 		return ConsommationChauffageService.findByIdConsommateur(idConsommateur);
 	}
 
@@ -52,16 +52,18 @@ public class ConsommationChauffageController {
 
 	}
 
-	@DeleteMapping(value="/{idCons}")
+	@DeleteMapping(value = "/{idCons}")
 	public void deleteConsommationChauffage(@PathVariable int idCons) {
-		if (ConsommationChauffageService.findByIdConsommateur(idCons)!= null){
-			ConsommationChauffageService.deleteConsommationChauffage(ConsommationChauffageService.findByIdConsommateur(idCons));
-			}
+		if (ConsommationChauffageService.findByIdConsommateur(idCons) != null) {
+			ConsommationChauffageService
+					.deleteConsommationChauffage(ConsommationChauffageService.findByIdConsommateur(idCons));
 		}
+	}
 
 	@PutMapping("/{idCons}")
-	public void updateConsommationChauffage(@RequestBody ConsommationChauffage ConsommationChauffage , @PathVariable int idCons) {
-		if( ConsommationChauffageService.findByIdConsommateur(idCons)!= null){
+	public void updateConsommationChauffage(@RequestBody ConsommationChauffage ConsommationChauffage,
+			@PathVariable int idCons) {
+		if (ConsommationChauffageService.findByIdConsommateur(idCons) != null) {
 			ConsommationChauffageService.addConsommationChauffage(ConsommationChauffage);
 		}
 

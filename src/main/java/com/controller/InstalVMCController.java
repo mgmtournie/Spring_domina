@@ -21,13 +21,13 @@ import com.service.IInstalVMCService;
 @RequestMapping("/instal/VMC")
 @CrossOrigin(origins = "http://localhost:8034")
 public class InstalVMCController {
-	
+
 	@Autowired
 	IInstalVMCService instalVMCService;
 
 	@GetMapping(value = "/all")
-	public List<InstalVMC> getAllInstalVMCs() {
-		return instalVMCService.getAllInstalVMCs();
+	public List<InstalVMC> getAllInstalsVMC() {
+		return instalVMCService.getAllInstalsVMC();
 	}
 
 	@PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -36,28 +36,28 @@ public class InstalVMCController {
 	}
 
 	@GetMapping(value = "/ID/{idInstal}")
-	public InstalVMC findById(@PathVariable int id) {
-		return instalVMCService.findById(id);
+	public InstalVMC findById(@PathVariable int idInstal) {
+		return instalVMCService.findById(idInstal);
 	}
 
-	@GetMapping(value = "/etat/{etatInst}")
+	@GetMapping(value = "/etat/{etat}")
 	public List<InstalVMC> findByEtat(@PathVariable boolean etat) {
 		return instalVMCService.findByEtat(etat);
 	}
 
-	@GetMapping(value = "/piece/{piece}")
+	@GetMapping(value = "/piece/{idpiece}")
 	public List<InstalVMC> findByPiece(@PathVariable int idpiece) {
 		return instalVMCService.findByPiece(idpiece);
 	}
 
-	@GetMapping(value = "/IDProg/{idProg}")
+	@GetMapping(value = "/IDProg/{idprog}")
 	public List<InstalVMC> findByProgramme(@PathVariable int idprog) {
-		return instalVMCService.findByProgramme(idprog);
+		return instalVMCService.findByProgrammes(idprog);
 	}
 
 	@PutMapping("/{idProg}")
-	public void actived(@RequestBody InstalVMC InstalVMC, @PathVariable int id) {
-		if (instalVMCService.findById(id) != null) {
+	public void actived(@RequestBody InstalVMC InstalVMC, @PathVariable int idProg) {
+		if (instalVMCService.findById(idProg) != null) {
 			instalVMCService.addInstalVMC(InstalVMC);
 		}
 

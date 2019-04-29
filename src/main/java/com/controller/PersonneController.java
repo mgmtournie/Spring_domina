@@ -45,14 +45,12 @@ public class PersonneController {
 		this.personneService.addPersonne(personne);
 	}
 
-
 	@PutMapping("/{idUser}")
 	public void updatePersonne(@RequestBody Personne personne, @PathVariable int idUser) {
-		if(personneService.findByIdUser(idUser)!=null){
+		if (personneService.findByIdUser(idUser) != null) {
 			personneService.addPersonne(personne);
 		}
 	}
-
 
 	@DeleteMapping("/{id}")
 	public void deleteUser(@PathVariable int id) {
