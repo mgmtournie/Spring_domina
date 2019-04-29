@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.DAO.ConsommationDAO;
 import com.DAO.PersonneDAO;
+import com.entity.Consommation;
 import com.entity.Personne;
 import com.entity.Programme;
 
@@ -14,6 +16,10 @@ public class PersonneServiceImpl implements IPersonneService {
 
 	@Autowired
 	PersonneDAO personneDAO;
+	@Autowired
+	ConsommationDAO consommationDAO;
+	
+	
 
 	public PersonneServiceImpl(PersonneDAO personneDAO) {
 		this.personneDAO = personneDAO;
@@ -44,27 +50,6 @@ public class PersonneServiceImpl implements IPersonneService {
 	}
 	public Personne findByNom(String nom) {
 		return this.personneDAO.findByNom(nom);
-
-	}
-
-	public String verifierConsomation(int idconsomation) {
-		return null;
-
-	}
-
-	public void lancerProgramme(int idProgramme) {
-
-	}
-
-	public void creerProgramme(Programme programme) {
-
-	}
-
-	public void arreterProgramme(int idProgramme) {
-
-	}
-
-	public void consulterCatpeur(int idCapteur) {
 
 	}
 }

@@ -30,12 +30,12 @@ public class CapteurCO2Controller {
 		return this.capteurCO2Service.getAllCapteursCO2();
 	}
 
-	@GetMapping(value= "/{id}")
+	@GetMapping(value= "/ID/{id}")
 	public CapteurCO2 findByIdCapteurCO2(int id) {
 		return this.capteurCO2Service.findByIdCapteurCO2(id);
 	}
 
-	@GetMapping(value= "/{idpiece}")
+	@GetMapping(value= "/Piece/{idpiece}")
 	public List<CapteurCO2> findByPiece(int idPiece) {
 		return this.capteurCO2Service.findByPiece(idPiece);
 	}

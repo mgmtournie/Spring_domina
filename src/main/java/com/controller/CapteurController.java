@@ -29,15 +29,15 @@ public class CapteurController {
 	public List<Capteur> getAllCapteurs(){
 		return capteurService.getAllCapteurs();
 	}
-	@GetMapping(value= "/{id}")
+	@GetMapping(value= "/Id{id}")
 	public Capteur findByIdCapteur(int id){
 		return capteurService.findByIdCapteur(id);
 	}
-	@GetMapping(value= "/{type}")
+	@GetMapping(value= "/Type{type}")
 	public List<Capteur> findByType(String type){
 		return capteurService.findByType(type);
 	}
-	@GetMapping(value= "/{idpiece}")
+	@GetMapping(value= "/Piece{idpiece}")
 	public List<Capteur> findByPiece(int idPiece){
 		return capteurService.findByPiece(idPiece);
 	}

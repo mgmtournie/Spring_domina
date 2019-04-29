@@ -31,12 +31,12 @@ public class CapteurLumenController {
 		return this.capteurLumenService.getAllCapteurLumens();
 	}
 
-	@GetMapping(value= "/{id}")
+	@GetMapping(value= "/Id/{id}")
 	public  CapteurLumen findByIdCapteurLumen(int id) {
 		return this.capteurLumenService.findByIdCapteurLumen(id);
 	}
 
-	@GetMapping(value= "/{idpiece}")
+	@GetMapping(value= "/Piece/{idpiece}")
 	public List<CapteurLumen> findByPiece(int idPiece) {
 		return this.capteurLumenService.findByPiece(idPiece);
 	}

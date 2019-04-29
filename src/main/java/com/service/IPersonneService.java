@@ -3,7 +3,7 @@ package com.service;
 import java.util.List;
 
 import com.entity.Personne;
-import com.entity.Programme;
+
 
 public interface IPersonneService {
 
@@ -18,16 +18,6 @@ public interface IPersonneService {
 	public Personne findByUsername(String username);
 
 	public Personne findByNom(String nom);
-
-	public String verifierConsomation(int idconsomation);
-
-	public void lancerProgramme(int idProgramme);
-
-	public void creerProgramme(Programme programme);
-
-	public void arreterProgramme(int idProgramme);
-
-	public void consulterCatpeur(int idCapteur);
 	
 	public Personne findByIdUser(int idUser);
 }
