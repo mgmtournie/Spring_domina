@@ -18,25 +18,25 @@ import com.entity.CapteurTemp;
 import com.service.ICapteurTempService;
 
 @RestController
-@RequestMapping("/capteur/temp")
+@RequestMapping("/capteur/Temp")
 @CrossOrigin(origins = "http://localhost:8034")
 public class CapteurTempController {
-	
+
 	@Autowired
-	ICapteurTempService capteurTempService; 
-	
-	@GetMapping(value= "/all")
+	ICapteurTempService capteurTempService;
+
+	@GetMapping(value = "/all")
 	public List<CapteurTemp> getAllCapteursTemp() {
 		return this.capteurTempService.getAllCapteursTemp();
 	}
 
-	@GetMapping(value= "/Id/{id}")
-	public CapteurTemp findByIdCapteurTemp(int id) {
-		return this.capteurTempService.findByIdCapteurTemp(id);
+	@GetMapping(value = "/ID/{id}")
+	public CapteurTemp findByIdCapteur(@PathVariable int id) {
+		return this.capteurTempService.findByIdCapteur(id);
 	}
 
-	@GetMapping(value= "/Piece/{idpiece}")
-	public List<CapteurTemp> findByPiece(int idPiece) {
+	@GetMapping(value = "/Piece/{idPiece}")
+	public List<CapteurTemp> findByPiece(@PathVariable int idPiece) {
 		return this.capteurTempService.findByPiece(idPiece);
 	}
 
@@ -47,17 +47,16 @@ public class CapteurTempController {
 
 	@PutMapping("/{idCapteur}")
 	public void updateCapteurTemp(@RequestBody CapteurTemp capteurTemp, @PathVariable int idCapteur) {
-		if(capteurTempService.findByIdCapteurTemp(idCapteur)!=null){
+		if (capteurTempService.findByIdCapteur(idCapteur) != null) {
 			capteurTempService.addCapteurTemp(capteurTemp);
 		}
 	}
 
 	@DeleteMapping("/{idCapteur}")
-	public void deleteCapteuTempr(@PathVariable int id) {
-		if(capteurTempService.findByIdCapteurTemp(id)!= null){
-			capteurTempService.deleteCapteurTemp(capteurTempService.findByIdCapteurTemp(id));
+	public void deleteCapteurTemp(@PathVariable int idCapteur) {
+		if (capteurTempService.findByIdCapteur(idCapteur) != null) {
+			capteurTempService.deleteCapteurTemp(capteurTempService.findByIdCapteur(idCapteur));
 		}
 	}
-
 
 }

@@ -8,11 +8,9 @@ public interface IInstalChauffageService {
 
 	public void addInstalChauffage(InstalChauffage instal);
 
-	public List<InstalChauffage> getAllInstalChauffages();
+	public List<InstalChauffage> getAllInstalsChauffage();
 
 	public InstalChauffage findById(int id);
-
-	public List<InstalChauffage> findByType(String type);
 
 	public List<InstalChauffage> findByEtat(boolean etat);
 

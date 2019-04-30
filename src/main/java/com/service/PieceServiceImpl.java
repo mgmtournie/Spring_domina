@@ -38,7 +38,5 @@ public class PieceServiceImpl implements IPieceService {
 	public Piece findByNomPiece(String nom) {
 		return this.pieceDAO.findByNomPiece(nom);
 	}
-	
-	
 
 }

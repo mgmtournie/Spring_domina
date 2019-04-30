@@ -9,7 +9,7 @@ import com.DAO.InstalChauffageDAO;
 import com.entity.InstalChauffage;
 
 @Service
-public class InstalChauffageServiceImpl implements IInstalChauffageService{
+public class InstalChauffageServiceImpl implements IInstalChauffageService {
 
 	@Autowired
 	InstalChauffageDAO instalChauffageDAO;
@@ -17,22 +17,17 @@ public class InstalChauffageServiceImpl implements IInstalChauffageService{
 	@Override
 	public void addInstalChauffage(InstalChauffage instal) {
 		this.instalChauffageDAO.save(instal);
-		
+
 	}
 
 	@Override
-	public List<InstalChauffage> getAllInstalChauffages() {
+	public List<InstalChauffage> getAllInstalsChauffage() {
 		return this.instalChauffageDAO.findAll();
 	}
 
 	@Override
 	public InstalChauffage findById(int id) {
 		return this.instalChauffageDAO.findById(id);
-	}
-
-	@Override
-	public List<InstalChauffage> findByType(String type) {
-		return this.instalChauffageDAO.findByType(type);
 	}
 
 	@Override
@@ -53,19 +48,19 @@ public class InstalChauffageServiceImpl implements IInstalChauffageService{
 	@Override
 	public void actived(InstalChauffage instal) {
 		this.instalChauffageDAO.save(instal);
-		
+
 	}
 
 	@Override
 	public void updateInstalChauffage(InstalChauffage instal) {
 		this.instalChauffageDAO.save(instal);
-		
+
 	}
 
 	@Override
 	public void deleteInstalChauffage(InstalChauffage instal) {
 		this.instalChauffageDAO.delete(instal);
-		
+
 	}
 
 }

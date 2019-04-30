@@ -26,8 +26,8 @@ public class InstalEclairageController {
 	IInstalEclairageService instalEclairageService;
 
 	@GetMapping(value = "/all")
-	public List<InstalEclairage> getAllInstalEclairages() {
-		return instalEclairageService.getAllInstalEclairages();
+	public List<InstalEclairage> getAllInstalsEclairage() {
+		return instalEclairageService.getAllInstalsEclairage();
 	}
 
 	@PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -36,28 +36,28 @@ public class InstalEclairageController {
 	}
 
 	@GetMapping(value = "/ID/{idInstal}")
-	public InstalEclairage findById(@PathVariable int id) {
-		return instalEclairageService.findById(id);
+	public InstalEclairage findById(@PathVariable int idInstal) {
+		return instalEclairageService.findById(idInstal);
 	}
 
-	@GetMapping(value = "/etat/{etatInst}")
+	@GetMapping(value = "/etat/{etat}")
 	public List<InstalEclairage> findByEtat(@PathVariable boolean etat) {
 		return instalEclairageService.findByEtat(etat);
 	}
 
-	@GetMapping(value = "/piece/{piece}")
+	@GetMapping(value = "/piece/{idpiece}")
 	public List<InstalEclairage> findByPiece(@PathVariable int idpiece) {
 		return instalEclairageService.findByPiece(idpiece);
 	}
 
-	@GetMapping(value = "/IDProg/{idProg}")
+	@GetMapping(value = "/IDProg/{idprog}")
 	public List<InstalEclairage> findByProgramme(@PathVariable int idprog) {
-		return instalEclairageService.findByProgramme(idprog);
+		return instalEclairageService.findByProgrammes(idprog);
 	}
 
 	@PutMapping("/{idProg}")
-	public void actived(@RequestBody InstalEclairage InstalEclairage, @PathVariable int id) {
-		if (instalEclairageService.findById(id) != null) {
+	public void actived(@RequestBody InstalEclairage InstalEclairage, @PathVariable int idProg) {
+		if (instalEclairageService.findById(idProg) != null) {
 			instalEclairageService.addInstalEclairage(InstalEclairage);
 		}
 

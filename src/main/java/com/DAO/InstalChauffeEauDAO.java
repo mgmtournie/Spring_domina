@@ -10,8 +10,6 @@ import com.entity.InstalChauffeEau;
 @Repository
 public interface InstalChauffeEauDAO extends JpaRepository<InstalChauffeEau, Double> {
 
-	public List<InstalChauffeEau> findByType(String type);
-
 	public List<InstalChauffeEau> findByPiece(int idpiece);
 
 	public InstalChauffeEau findById(int idInstall);

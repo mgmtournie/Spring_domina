@@ -36,33 +36,33 @@ public class InstallationController {
 	}
 
 	@GetMapping(value = "/ID/{idInstal}")
-	public Installation findById(@PathVariable int id) {
-		return installationService.findById(id);
+	public Installation findById(@PathVariable int idInstal) {
+		return installationService.findById(idInstal);
 	}
 
-	@GetMapping(value = "/type/{typeInstal}")
+	@GetMapping(value = "/type/{type}")
 	public List<Installation> findByType(@PathVariable String type) {
 		return installationService.findByType(type);
 	}
 
-	@GetMapping(value = "/etat/{etatInst}")
+	@GetMapping(value = "/etat/{etat}")
 	public List<Installation> findByEtat(@PathVariable boolean etat) {
 		return installationService.findByEtat(etat);
 	}
 
-	@GetMapping(value = "/piece/{piece}")
+	@GetMapping(value = "/piece/{idpiece}")
 	public List<Installation> findByPiece(@PathVariable int idpiece) {
 		return installationService.findByPiece(idpiece);
 	}
 
-	@GetMapping(value = "/IDProg/{idProg}")
+	@GetMapping(value = "/IDProg/{idprog}")
 	public List<Installation> findByProgramme(@PathVariable int idprog) {
 		return installationService.findByProgramme(idprog);
 	}
 
 	@PutMapping("/{idProg}")
-	public void actived(@RequestBody Installation installation, @PathVariable int id) {
-		if (installationService.findById(id) != null) {
+	public void actived(@RequestBody Installation installation, @PathVariable int idProg) {
+		if (installationService.findById(idProg) != null) {
 			installationService.addInstallation(installation);
 		}
 

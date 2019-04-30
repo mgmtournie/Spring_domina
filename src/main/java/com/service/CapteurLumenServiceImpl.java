@@ -7,20 +7,21 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.CapteurLumenDAO;
 import com.entity.CapteurLumen;
+
 @Service
-public class CapteurLumenServiceImpl implements ICapteurLumenService{
+public class CapteurLumenServiceImpl implements ICapteurLumenService {
 
 	@Autowired
-	CapteurLumenDAO capteurLumen; 
-	
+	CapteurLumenDAO capteurLumen;
+
 	@Override
-	public List<CapteurLumen> getAllCapteurLumens() {
-		
+	public List<CapteurLumen> getAllCapteursLumen() {
+
 		return this.capteurLumen.findAll();
 	}
 
 	@Override
-	public CapteurLumen findByIdCapteurLumen(int id) {
+	public CapteurLumen findByIdCapteur(int id) {
 		return this.capteurLumen.findByIdCapteur(id);
 	}
 
@@ -32,19 +33,19 @@ public class CapteurLumenServiceImpl implements ICapteurLumenService{
 	@Override
 	public void addCapteurLumen(CapteurLumen capteurLumen) {
 		this.capteurLumen.save(capteurLumen);
-		
+
 	}
 
 	@Override
 	public void updateCapteurLumen(CapteurLumen capteurLumen) {
 		this.capteurLumen.save(capteurLumen);
-		
+
 	}
 
 	@Override
 	public void deleteCapteurLumen(CapteurLumen capteurLumen) {
 		this.capteurLumen.delete(capteurLumen);
-		
+
 	}
 
 }

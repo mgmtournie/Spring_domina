@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.entity.Personne;
 
-
 public interface IPersonneService {
 
 	public List<Personne> getAllPersonnes();
@@ -18,6 +17,6 @@ public interface IPersonneService {
 	public Personne findByUsername(String username);
 
 	public Personne findByNom(String nom);
-	
+
 	public Personne findByIdUser(int idUser);
 }

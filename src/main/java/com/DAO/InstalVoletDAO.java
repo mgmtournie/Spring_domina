@@ -9,8 +9,6 @@ import com.entity.InstalVolet;
 
 @Repository
 public interface InstalVoletDAO extends JpaRepository<InstalVolet, Double> {
-	
-	public List<InstalVolet> findByType(String type);
 
 	public List<InstalVolet> findByPiece(int idpiece);
 

@@ -17,22 +17,17 @@ public class InstalEclairageServiceImpl implements IInstalEclairageService {
 	@Override
 	public void addInstalEclairage(InstalEclairage instal) {
 		this.instalEclairageDAO.save(instal);
-		
+
 	}
 
 	@Override
-	public List<InstalEclairage> getAllInstalEclairages() {
+	public List<InstalEclairage> getAllInstalsEclairage() {
 		return this.instalEclairageDAO.findAll();
 	}
 
 	@Override
 	public InstalEclairage findById(int id) {
 		return this.instalEclairageDAO.findById(id);
-	}
-
-	@Override
-	public List<InstalEclairage> findByType(String type) {
-		return this.instalEclairageDAO.findByType(type);
 	}
 
 	@Override
@@ -46,26 +41,26 @@ public class InstalEclairageServiceImpl implements IInstalEclairageService {
 	}
 
 	@Override
-	public List<InstalEclairage> findByProgramme(int idprog) {
+	public List<InstalEclairage> findByProgrammes(int idprog) {
 		return this.instalEclairageDAO.findByProgrammes(idprog);
 	}
 
 	@Override
 	public void actived(InstalEclairage instal) {
 		this.instalEclairageDAO.save(instal);
-		
+
 	}
 
 	@Override
 	public void updateInstalEclairage(InstalEclairage instal) {
 		this.instalEclairageDAO.save(instal);
-		
+
 	}
 
 	@Override
 	public void deleteInstalEclairage(InstalEclairage instal) {
 		this.instalEclairageDAO.delete(instal);
-		
+
 	}
 
 }

@@ -31,18 +31,18 @@ public class ConsommationController {
 	}
 
 	@GetMapping(value = "/Piece/{idpiece}")
-	public List<Consommation> findByPieces(int idpiece) {
+	public List<Consommation> findByPieces(@PathVariable int idpiece) {
 		return consommationService.findByPieces(idpiece);
 	}
 
 	@GetMapping(value = "/Instal/{idinstal}")
-	public Consommation findByInstal(int idinstal) {
+	public Consommation findByInstal(@PathVariable int idinstal) {
 		return consommationService.findByInstal(idinstal);
 
 	}
 
-	@GetMapping(value = "/Id/{idConsommateur}")
-	public Consommation findByIdConsommateur(int idConsommateur) {
+	@GetMapping(value = "/ID/{idConsommateur}")
+	public Consommation findByIdConsommateur(@PathVariable int idConsommateur) {
 		return consommationService.findByIdConsommateur(idConsommateur);
 	}
 
@@ -52,16 +52,16 @@ public class ConsommationController {
 
 	}
 
-	@DeleteMapping(value="/{idCons}")
+	@DeleteMapping(value = "/{idCons}")
 	public void deleteConsommation(@PathVariable int idCons) {
-		if (consommationService.findByIdConsommateur(idCons)!= null){
+		if (consommationService.findByIdConsommateur(idCons) != null) {
 			consommationService.deleteConsommation(consommationService.findByIdConsommateur(idCons));
-			}
 		}
+	}
 
 	@PutMapping("/{idCons}")
-	public void updateConsommation(@RequestBody Consommation consommation , @PathVariable int idCons) {
-		if( consommationService.findByIdConsommateur(idCons)!= null){
+	public void updateConsommation(@RequestBody Consommation consommation, @PathVariable int idCons) {
+		if (consommationService.findByIdConsommateur(idCons) != null) {
 			consommationService.addConsommation(consommation);
 		}
 

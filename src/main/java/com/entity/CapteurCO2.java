@@ -16,9 +16,9 @@ public class CapteurCO2 extends Capteur {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CapteurCO2(int idCapteur, String type, Piece piece) {
+	public CapteurCO2(int idCapteur, String type, Piece piece, int tauxCO2) {
 		super(idCapteur, type, piece);
-		// TODO Auto-generated constructor stub
+		this.TauxCO2 = tauxCO2;
 	}
 
 	public CapteurCO2(int tauxCO2) {

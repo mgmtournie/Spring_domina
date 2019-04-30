@@ -8,9 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.entity.InstalEclairage;
 
 @Repository
-public interface InstalEclairageDAO extends JpaRepository<InstalEclairage, Double>{
-
-	public List<InstalEclairage> findByType(String type);
+public interface InstalEclairageDAO extends JpaRepository<InstalEclairage, Double> {
 
 	public List<InstalEclairage> findByPiece(int idpiece);
 

@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.entity.CapteurTemp;
 
 @Repository
-public interface CapteurTempDAO extends JpaRepository<CapteurTemp, Integer>{
-	
+public interface CapteurTempDAO extends JpaRepository<CapteurTemp, Integer> {
 
 	public CapteurTemp findByIdCapteur(int idCapteur);
 

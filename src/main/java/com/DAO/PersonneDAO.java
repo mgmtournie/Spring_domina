@@ -7,11 +7,11 @@ import com.entity.Personne;
 
 @Repository
 public interface PersonneDAO extends JpaRepository<Personne, Integer> {
+
 	public Personne findByUsername(String username);
 
 	public Personne findByNom(String nom);
-	
-	public Personne findByIdUser( int idUser);
 
+	public Personne findByIdUser(int idUser);
 
 }

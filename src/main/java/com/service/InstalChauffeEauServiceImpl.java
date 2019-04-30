@@ -17,22 +17,17 @@ public class InstalChauffeEauServiceImpl implements IInstalChauffeEauService {
 	@Override
 	public void addInstalChauffeEau(InstalChauffeEau instal) {
 		this.instalChauffeEauDAO.save(instal);
-		
+
 	}
 
 	@Override
-	public List<InstalChauffeEau> getAllInstalChauffeEaus() {
+	public List<InstalChauffeEau> getAllInstalsChauffeEau() {
 		return this.instalChauffeEauDAO.findAll();
 	}
 
 	@Override
 	public InstalChauffeEau findById(int id) {
 		return this.instalChauffeEauDAO.findById(id);
-	}
-
-	@Override
-	public List<InstalChauffeEau> findByType(String type) {
-		return this.instalChauffeEauDAO.findByType(type);
 	}
 
 	@Override
@@ -46,27 +41,26 @@ public class InstalChauffeEauServiceImpl implements IInstalChauffeEauService {
 	}
 
 	@Override
-	public List<InstalChauffeEau> findByProgramme(int idprog) {
+	public List<InstalChauffeEau> findByProgrammes(int idprog) {
 		return this.instalChauffeEauDAO.findByProgrammes(idprog);
 	}
 
 	@Override
 	public void actived(InstalChauffeEau instal) {
 		this.instalChauffeEauDAO.save(instal);
-		
+
 	}
 
 	@Override
 	public void updateInstalChauffeEau(InstalChauffeEau instal) {
 		this.instalChauffeEauDAO.save(instal);
-		
+
 	}
 
 	@Override
 	public void deleteInstalChauffeEau(InstalChauffeEau instal) {
 		this.instalChauffeEauDAO.delete(instal);
-		
-	}
 
+	}
 
 }
