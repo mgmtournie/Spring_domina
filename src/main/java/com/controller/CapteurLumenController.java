@@ -24,12 +24,12 @@ public class CapteurLumenController {
 
 	@Autowired
 	ICapteurLumenService capteurLumenService;
-
+	//postman ok
 	@GetMapping(value = "/all")
 	public List<CapteurLumen> getAllCapteursLumen() {
 		return this.capteurLumenService.getAllCapteursLumen();
 	}
-
+	//postman ok
 	@GetMapping(value = "/ID/{id}")
 	public CapteurLumen findByIdCapteurLumen(@PathVariable int id) {
 		return this.capteurLumenService.findByIdCapteur(id);

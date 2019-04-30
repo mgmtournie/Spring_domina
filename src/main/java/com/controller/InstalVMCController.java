@@ -24,7 +24,7 @@ public class InstalVMCController {
 
 	@Autowired
 	IInstalVMCService instalVMCService;
-
+	//postman ok
 	@GetMapping(value = "/all")
 	public List<InstalVMC> getAllInstalsVMC() {
 		return instalVMCService.getAllInstalsVMC();
@@ -34,12 +34,12 @@ public class InstalVMCController {
 	public void addInstalVMC(@RequestBody InstalVMC instal) {
 		this.instalVMCService.addInstalVMC(instal);
 	}
-
+	//postman ok
 	@GetMapping(value = "/ID/{idInstal}")
 	public InstalVMC findById(@PathVariable int idInstal) {
 		return instalVMCService.findById(idInstal);
 	}
-
+	//postman ok
 	@GetMapping(value = "/etat/{etat}")
 	public List<InstalVMC> findByEtat(@PathVariable boolean etat) {
 		return instalVMCService.findByEtat(etat);

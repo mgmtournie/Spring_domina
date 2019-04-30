@@ -34,7 +34,7 @@ public class CapteurCO2Controller {
 	public CapteurCO2 findByIdCapteur(@PathVariable int id) {
 		return this.capteurCO2Service.findByIdCapteur(id);
 	}
-
+//Parameter value [1] did not match expected type [com.entity.Piece (n/a)]
 	@GetMapping(value = "/Piece/{idPiece}")
 	public List<CapteurCO2> findByPiece(@PathVariable int idPiece) {
 		return this.capteurCO2Service.findByPiece(idPiece);

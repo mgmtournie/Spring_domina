@@ -24,7 +24,7 @@ public class InstalChauffeEauController {
 
 	@Autowired
 	IInstalChauffeEauService instalChauffeEauService;
-
+	//postman ok
 	@GetMapping(value = "/all")
 	public List<InstalChauffeEau> getAllInstalsChauffeEau() {
 		return instalChauffeEauService.getAllInstalsChauffeEau();
@@ -34,12 +34,12 @@ public class InstalChauffeEauController {
 	public void addInstalChauffeEau(@RequestBody InstalChauffeEau instal) {
 		this.instalChauffeEauService.addInstalChauffeEau(instal);
 	}
-
+	//postman ok
 	@GetMapping(value = "/ID/{idInstal}")
 	public InstalChauffeEau findById(@PathVariable int idInstal) {
 		return instalChauffeEauService.findById(idInstal);
 	}
-
+	//postman ok
 	@GetMapping(value = "/etat/{etat}")
 	public List<InstalChauffeEau> findByEtat(@PathVariable boolean etat) {
 		return instalChauffeEauService.findByEtat(etat);

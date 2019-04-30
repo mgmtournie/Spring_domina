@@ -24,17 +24,17 @@ public class ProgrammeController {
 
 	@Autowired
 	IProgrammeService programmeService;
-
+	//postman ok
 	@GetMapping(value = "/all")
 	public List<Programme> getAllProgrammes() {
 		return programmeService.getAllProgrammes();
 	}
-
+	//postman ok
 	@GetMapping(value = "/ID/{idProg}")
 	public Programme findByIdProg(@PathVariable int idProg) {
 		return programmeService.findByIdProg(idProg);
 	}
-
+	//postman ok
 	@GetMapping(value = "/Nom/{nomProg}")
 	public Programme findByNomProg(@PathVariable String nomProg) {
 		return programmeService.findByNomProg(nomProg);

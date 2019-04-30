@@ -24,7 +24,7 @@ public class ConsommationEauController {
 
 	@Autowired
 	IConsommationEauService ConsommationEauService;
-
+	//postman ok
 	@GetMapping(value = "/all")
 	public List<ConsommationEau> getAllConsommationsEau() {
 		return ConsommationEauService.getAllConsommationsEau();

@@ -24,7 +24,7 @@ public class InstalEclairageController {
 
 	@Autowired
 	IInstalEclairageService instalEclairageService;
-
+	//postman ok
 	@GetMapping(value = "/all")
 	public List<InstalEclairage> getAllInstalsEclairage() {
 		return instalEclairageService.getAllInstalsEclairage();
@@ -34,12 +34,12 @@ public class InstalEclairageController {
 	public void addInstalEclairage(@RequestBody InstalEclairage instal) {
 		this.instalEclairageService.addInstalEclairage(instal);
 	}
-
+	//postman ok
 	@GetMapping(value = "/ID/{idInstal}")
 	public InstalEclairage findById(@PathVariable int idInstal) {
 		return instalEclairageService.findById(idInstal);
 	}
-
+	//postman ok
 	@GetMapping(value = "/etat/{etat}")
 	public List<InstalEclairage> findByEtat(@PathVariable boolean etat) {
 		return instalEclairageService.findByEtat(etat);
