@@ -51,6 +51,7 @@ public class CapteurController {
 		if (capteurService.findByIdCapteur(idCapteur)!= null){
 			capteurService.addCapteur(capteur);
 		}
+		
 	}
 	@DeleteMapping("/{idCapteur}")
 	public void deleteCapteur (@PathVariable int idCapteur){
