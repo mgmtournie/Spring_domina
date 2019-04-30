@@ -24,9 +24,10 @@ public class InstalEclairage extends Installation {
 	}
 
 	public InstalEclairage(int id, String type, String dateAjout, Boolean etat, Piece piece, List<Programme> programmes,
-			Consommation conso) {
+			Consommation conso, int intensite, ConsommationElec consoElec) {
 		super(id, type, dateAjout, etat, piece, programmes, conso);
-		// TODO Auto-generated constructor stub
+		this.intensite = intensite;
+		this.consoElec = consoElec;
 	}
 
 	public InstalEclairage(int intensite, ConsommationElec consoElec) {

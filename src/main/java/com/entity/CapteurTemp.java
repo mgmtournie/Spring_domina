@@ -16,9 +16,9 @@ public class CapteurTemp extends Capteur {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CapteurTemp(int idCapteur, String type, Piece piece) {
+	public CapteurTemp(int idCapteur, String type, Piece piece, int temp) {
 		super(idCapteur, type, piece);
-		// TODO Auto-generated constructor stub
+		this.temp = temp;
 	}
 
 	public CapteurTemp(int temp) {

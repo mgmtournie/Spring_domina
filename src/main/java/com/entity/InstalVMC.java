@@ -24,9 +24,10 @@ public class InstalVMC extends Installation {
 	}
 
 	public InstalVMC(int id, String type, String dateAjout, Boolean etat, Piece piece, List<Programme> programmes,
-			Consommation conso) {
+			Consommation conso, int puissance, ConsommationElec consoElec) {
 		super(id, type, dateAjout, etat, piece, programmes, conso);
-		// TODO Auto-generated constructor stub
+		this.puissance = puissance;
+		this.consoElec = consoElec;
 	}
 
 	public InstalVMC(int puissance, ConsommationElec consoElec) {

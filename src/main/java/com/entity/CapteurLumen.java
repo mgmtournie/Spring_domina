@@ -15,9 +15,9 @@ public class CapteurLumen extends Capteur {
 		// TODO Auto-generated constructor stub
 	}
 
-	public CapteurLumen(int idCapteur, String type, Piece piece) {
+	public CapteurLumen(int idCapteur, String type, Piece piece, int luminosite) {
 		super(idCapteur, type, piece);
-		// TODO Auto-generated constructor stub
+		this.luminosite = luminosite;
 	}
 
 	public CapteurLumen(int luminosite) {

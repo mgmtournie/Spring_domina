@@ -27,9 +27,11 @@ public class InstalChauffeEau extends Installation {
 	}
 
 	public InstalChauffeEau(int id, String type, String dateAjout, Boolean etat, Piece piece,
-			List<Programme> programmes, Consommation conso) {
+			List<Programme> programmes, Consommation conso, int puissance, ConsommationElec consoElec, ConsommationEau consoEau) {
 		super(id, type, dateAjout, etat, piece, programmes, conso);
-		// TODO Auto-generated constructor stub
+		this.puissance = puissance;
+		this.consoElec = consoElec;
+		this.consoEau = consoEau;
 	}
 
 	public InstalChauffeEau(int puissance, ConsommationElec consoElec, ConsommationEau consoEau) {

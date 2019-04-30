@@ -19,9 +19,9 @@ public class InstalVolet extends Installation {
 	}
 
 	public InstalVolet(int id, String type, String dateAjout, Boolean etat, Piece piece, List<Programme> programmes,
-			Consommation conso) {
+			Consommation conso, int ouverture) {
 		super(id, type, dateAjout, etat, piece, programmes, conso);
-		// TODO Auto-generated constructor stub
+		this.ouverture = ouverture;
 	}
 
 	public InstalVolet(int ouverture) {
