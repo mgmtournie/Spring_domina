@@ -24,17 +24,17 @@ public class PersonneController {
 
 	@Autowired
 	IPersonneService personneService;
-
+	//postman ok
 	@GetMapping(value = "/all")
 	public List<Personne> getAllPersonnes() {
 		return personneService.getAllPersonnes();
 	}
-
+	//postman ok
 	@GetMapping(value = "/User/{username}")
 	public Personne findByUsername(@PathVariable String username) {
 		return personneService.findByUsername(username);
 	}
-
+	//postman ok
 	@GetMapping(value = "/nom/{nom}")
 	public Personne findByNom(@PathVariable String nom) {
 		return personneService.findByNom(nom);

@@ -24,7 +24,7 @@ public class InstalVoletController {
 
 	@Autowired
 	IInstalVoletService instalVoletService;
-
+	//postman ok
 	@GetMapping(value = "/all")
 	public List<InstalVolet> getAllInstalVolets() {
 		return instalVoletService.getAllInstalsVolet();
@@ -34,12 +34,12 @@ public class InstalVoletController {
 	public void addInstalVolet(@RequestBody InstalVolet instal) {
 		this.instalVoletService.addInstalVolet(instal);
 	}
-
+	//postman ok
 	@GetMapping(value = "/ID/{idInstal}")
 	public InstalVolet findById(@PathVariable int idInstal) {
 		return instalVoletService.findById(idInstal);
 	}
-
+	//postman ok
 	@GetMapping(value = "/etat/{etat}")
 	public List<InstalVolet> findByEtat(@PathVariable boolean etat) {
 		return instalVoletService.findByEtat(etat);

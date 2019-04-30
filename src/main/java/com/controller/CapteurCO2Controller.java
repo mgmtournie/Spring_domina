@@ -24,17 +24,17 @@ public class CapteurCO2Controller {
 
 	@Autowired
 	ICapteurCO2Service capteurCO2Service;
-
+//test postman ok
 	@GetMapping(value = "/all")
 	public List<CapteurCO2> getAllCapteursCO2() {
 		return this.capteurCO2Service.getAllCapteursCO2();
 	}
-
+//test postman ok
 	@GetMapping(value = "/ID/{id}")
 	public CapteurCO2 findByIdCapteur(@PathVariable int id) {
 		return this.capteurCO2Service.findByIdCapteur(id);
 	}
-
+//Parameter value [1] did not match expected type [com.entity.Piece (n/a)]
 	@GetMapping(value = "/Piece/{idPiece}")
 	public List<CapteurCO2> findByPiece(@PathVariable int idPiece) {
 		return this.capteurCO2Service.findByPiece(idPiece);

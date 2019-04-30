@@ -24,9 +24,10 @@ public class InstalChauffage extends Installation {
 	}
 
 	public InstalChauffage(int id, String type, String dateAjout, Boolean etat, Piece piece, List<Programme> programmes,
-			Consommation conso) {
+			Consommation conso, int puissance, ConsommationChauffage consoChauffage) {
 		super(id, type, dateAjout, etat, piece, programmes, conso);
-		// TODO Auto-generated constructor stub
+		this.puissance = puissance;
+		this.consoChauffage = consoChauffage;
 	}
 
 	public InstalChauffage(int puissance, ConsommationChauffage consoChauffage) {

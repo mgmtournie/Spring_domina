@@ -24,7 +24,7 @@ public class InstallationController {
 
 	@Autowired
 	IInstallationService installationService;
-
+	//postman ok
 	@GetMapping(value = "/all")
 	public List<Installation> getAllInstallations() {
 		return installationService.getAllInstallations();
@@ -34,17 +34,17 @@ public class InstallationController {
 	public void addInstallation(@RequestBody Installation instal) {
 		this.installationService.addInstallation(instal);
 	}
-
+	//postman ok
 	@GetMapping(value = "/ID/{idInstal}")
 	public Installation findById(@PathVariable int idInstal) {
 		return installationService.findById(idInstal);
 	}
-
+	//postman ok
 	@GetMapping(value = "/type/{type}")
 	public List<Installation> findByType(@PathVariable String type) {
 		return installationService.findByType(type);
 	}
-
+	//postman ok
 	@GetMapping(value = "/etat/{etat}")
 	public List<Installation> findByEtat(@PathVariable boolean etat) {
 		return installationService.findByEtat(etat);

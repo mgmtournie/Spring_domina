@@ -24,17 +24,17 @@ public class PieceController {
 
 	@Autowired
 	IPieceService pieceService;
-
+	//postman ok
 	@GetMapping(value = "/all")
 	public List<Piece> getAllPieces() {
 		return pieceService.getAllPieces();
 	}
-
+	//postman ok
 	@GetMapping(value = "/ID/{idPiece}")
 	public Piece findByIdPiece(@PathVariable int idPiece) {
 		return pieceService.findByIdPiece(idPiece);
 	}
-
+	//postman ok
 	@GetMapping(value = "/Nom/{nomPiece}")
 	public Piece findByNomPiece(@PathVariable String nomPiece) {
 		return pieceService.findByNomPiece(nomPiece);

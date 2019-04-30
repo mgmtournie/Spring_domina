@@ -24,12 +24,12 @@ public class CapteurTempController {
 
 	@Autowired
 	ICapteurTempService capteurTempService;
-
+//postman ok
 	@GetMapping(value = "/all")
 	public List<CapteurTemp> getAllCapteursTemp() {
 		return this.capteurTempService.getAllCapteursTemp();
 	}
-
+//postman ok
 	@GetMapping(value = "/ID/{id}")
 	public CapteurTemp findByIdCapteur(@PathVariable int id) {
 		return this.capteurTempService.findByIdCapteur(id);

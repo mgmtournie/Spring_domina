@@ -24,7 +24,7 @@ public class ConsommationChauffageController {
 
 	@Autowired
 	IConsommationChauffageService ConsommationChauffageService;
-
+//postman ok
 	@GetMapping(value = "/all")
 	public List<ConsommationChauffage> getAllConsommationsChauffage() {
 		return ConsommationChauffageService.getAllConsommationsChauffage();

@@ -1,5 +1,7 @@
 package com.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -18,6 +20,14 @@ public class ConsommationEau extends Consommation {
 	public ConsommationEau() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public ConsommationEau(int idConsommateur, String fournisseur, String type, Installation instal,
+			List<Piece> pieces, double consM3Jour, double consM3Mois, double consM3An) {
+		super(idConsommateur, fournisseur, type, instal, pieces);
+		ConsM3Jour = consM3Jour;
+		ConsM3Mois = consM3Mois;
+		ConsM3An = consM3An;
 	}
 
 	public ConsommationEau(double consM3Jour, double consM3Mois, double consM3An) {
