@@ -24,12 +24,12 @@ public class InstallationController {
 
 	@Autowired
 	IInstallationService installationService;
-	//postman ok
+	
 	@GetMapping(value = "/all")
 	public List<Installation> getAllInstallations() {
 		return installationService.getAllInstallations();
 	}
-
+	//postman ok
 	@PostMapping(value = "/addInstall", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void addInstallation(@RequestBody Installation instal) {
 		this.installationService.addInstallation(instal);

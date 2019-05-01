@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.DAO.CapteurCO2DAO;
+
 import com.entity.CapteurCO2;
 
 @Service
@@ -19,8 +20,8 @@ public class CapteurCO2ServiceImpl implements ICapteurCO2Service {
 		return this.capteurCO2DAO.findAll();
 	}
 
-	@Override
-	public CapteurCO2 findByIdCapteur(int id) {
+
+	public CapteurCO2 findByIdCapteurCO2(int id) {
 		return this.capteurCO2DAO.findByIdCapteur(id);
 	}
 
@@ -42,6 +43,12 @@ public class CapteurCO2ServiceImpl implements ICapteurCO2Service {
 	@Override
 	public void deleteCapteurCO2(CapteurCO2 CapteurCO2) {
 		this.capteurCO2DAO.delete(CapteurCO2);
+	}
+
+	@Override
+	public CapteurCO2 findByIdCapteur(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
