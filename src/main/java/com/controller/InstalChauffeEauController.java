@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.InstalChauffeEau;
+import com.entity.Piece;
+import com.entity.Programme;
 import com.service.IInstalChauffeEauService;
+import com.service.IPieceService;
+import com.service.IProgrammeService;
 
 @RestController
 @RequestMapping("/instal/ChauffeEau")
@@ -24,6 +28,10 @@ public class InstalChauffeEauController {
 
 	@Autowired
 	IInstalChauffeEauService instalChauffeEauService;
+	@Autowired
+	IPieceService pieceService;
+	@Autowired
+	IProgrammeService programmeService;
 	//postman ok
 	@GetMapping(value = "/all")
 	public List<InstalChauffeEau> getAllInstalsChauffeEau() {
@@ -47,12 +55,18 @@ public class InstalChauffeEauController {
 
 	@GetMapping(value = "/piece/{idpiece}")
 	public List<InstalChauffeEau> findByPiece(@PathVariable int idpiece) {
-		return instalChauffeEauService.findByPiece(idpiece);
+		Piece piece = new Piece();
+		piece = pieceService.findByIdPiece(idpiece);
+		return instalChauffeEauService.findByPiece(piece);
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping(value = "/IDProg/{idProg}")
 	public List<InstalChauffeEau> findByProgramme(@PathVariable int idProg) {
-		return instalChauffeEauService.findByProgrammes(idProg);
+		Programme programme  = programmeService.findByIdProg(idProg);
+		List<Programme> programmes = null;
+		programmes.add(programme);
+		return instalChauffeEauService.findByProgrammes(programmes);
 	}
 
 	@PutMapping("/{idProg}")

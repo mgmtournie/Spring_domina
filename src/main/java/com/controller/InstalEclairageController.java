@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.InstalEclairage;
+import com.entity.Piece;
+import com.entity.Programme;
 import com.service.IInstalEclairageService;
+import com.service.IPieceService;
+import com.service.IProgrammeService;
 
 @RestController
 @RequestMapping("/instal/Eclairage")
@@ -24,6 +28,10 @@ public class InstalEclairageController {
 
 	@Autowired
 	IInstalEclairageService instalEclairageService;
+	@Autowired
+	IPieceService pieceService;
+	@Autowired
+	IProgrammeService programmeService;
 	//postman ok
 	@GetMapping(value = "/all")
 	public List<InstalEclairage> getAllInstalsEclairage() {
@@ -47,12 +55,18 @@ public class InstalEclairageController {
 
 	@GetMapping(value = "/piece/{idpiece}")
 	public List<InstalEclairage> findByPiece(@PathVariable int idpiece) {
-		return instalEclairageService.findByPiece(idpiece);
+		Piece piece = new Piece();
+		piece = pieceService.findByIdPiece(idpiece);
+		return instalEclairageService.findByPiece(piece);
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping(value = "/IDProg/{idprog}")
 	public List<InstalEclairage> findByProgramme(@PathVariable int idprog) {
-		return instalEclairageService.findByProgrammes(idprog);
+		Programme programme  = programmeService.findByIdProg(idprog);
+		List<Programme> programmes = null;
+		programmes.add(programme);
+		return instalEclairageService.findByProgrammes(programmes);
 	}
 
 	@PutMapping("/{idProg}")

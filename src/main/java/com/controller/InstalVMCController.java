@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.InstalVMC;
+import com.entity.Piece;
+import com.entity.Programme;
 import com.service.IInstalVMCService;
+import com.service.IPieceService;
+import com.service.IProgrammeService;
 
 @RestController
 @RequestMapping("/instal/VMC")
@@ -24,6 +28,11 @@ public class InstalVMCController {
 
 	@Autowired
 	IInstalVMCService instalVMCService;
+	@Autowired
+	IPieceService pieceService;
+	@Autowired
+	IProgrammeService programmeService;
+	
 	//postman ok
 	@GetMapping(value = "/all")
 	public List<InstalVMC> getAllInstalsVMC() {
@@ -47,12 +56,18 @@ public class InstalVMCController {
 
 	@GetMapping(value = "/piece/{idpiece}")
 	public List<InstalVMC> findByPiece(@PathVariable int idpiece) {
-		return instalVMCService.findByPiece(idpiece);
+		Piece piece = new Piece();
+		piece = pieceService.findByIdPiece(idpiece);
+		return instalVMCService.findByPiece(piece);
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping(value = "/IDProg/{idprog}")
 	public List<InstalVMC> findByProgramme(@PathVariable int idprog) {
-		return instalVMCService.findByProgrammes(idprog);
+		Programme programme  = programmeService.findByIdProg(idprog);
+		List<Programme> programmes = null;
+		programmes.add(programme);
+		return instalVMCService.findByProgrammes(programmes);
 	}
 
 	@PutMapping("/{idProg}")

@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.InstalVolet;
+import com.entity.Piece;
+import com.entity.Programme;
 import com.service.IInstalVoletService;
+import com.service.IPieceService;
+import com.service.IProgrammeService;
 
 @RestController
 @RequestMapping("/instal/Volet")
@@ -24,6 +28,10 @@ public class InstalVoletController {
 
 	@Autowired
 	IInstalVoletService instalVoletService;
+	@Autowired
+	IPieceService pieceService;
+	@Autowired
+	IProgrammeService programmeService;
 	//postman ok
 	@GetMapping(value = "/all")
 	public List<InstalVolet> getAllInstalVolets() {
@@ -47,12 +55,18 @@ public class InstalVoletController {
 
 	@GetMapping(value = "/piece/{idpiece}")
 	public List<InstalVolet> findByPiece(@PathVariable int idpiece) {
-		return instalVoletService.findByPiece(idpiece);
+		Piece piece = new Piece();
+		piece = pieceService.findByIdPiece(idpiece);
+		return instalVoletService.findByPiece(piece);
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping(value = "/IDProg/{idprog}")
 	public List<InstalVolet> findByProgramme(@PathVariable int idprog) {
-		return instalVoletService.findByProgrammes(idprog);
+		Programme programme  = programmeService.findByIdProg(idprog);
+		List<Programme> programmes = null;
+		programmes.add(programme);
+		return instalVoletService.findByProgrammes(programmes);
 	}
 
 	@PutMapping("/{idProg}")

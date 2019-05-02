@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.InstalChauffage;
+import com.entity.Piece;
+import com.entity.Programme;
 import com.service.IInstalChauffageService;
+import com.service.IPieceService;
+import com.service.IProgrammeService;
 
 @RestController
 @RequestMapping("/instal/Chauffage")
@@ -24,6 +28,11 @@ public class InstalChauffageController {
 
 	@Autowired
 	IInstalChauffageService instalChauffageService;
+	@Autowired
+	IPieceService pieceService;
+	@Autowired
+	IProgrammeService programmeService;
+	
 	//postman ok
 	@GetMapping(value = "/all")
 	public List<InstalChauffage> getAllInstalsChauffage() {
@@ -47,12 +56,18 @@ public class InstalChauffageController {
 
 	@GetMapping(value = "/piece/{idpiece}")
 	public List<InstalChauffage> findByPiece(@PathVariable int idpiece) {
-		return instalChauffageService.findByPiece(idpiece);
+		Piece piece = new Piece();
+		piece = pieceService.findByIdPiece(idpiece);
+		return instalChauffageService.findByPiece(piece);
 	}
 
+	@SuppressWarnings("null")
 	@GetMapping(value = "/IDProg/{idprog}")
 	public List<InstalChauffage> findByProgramme(@PathVariable int idprog) {
-		return instalChauffageService.findByProgramme(idprog);
+		Programme programme  = programmeService.findByIdProg(idprog);
+		List<Programme> programmes = null;
+		programmes.add(programme);
+		return instalChauffageService.findByProgramme(programmes);
 	}
 
 	@PutMapping("/{idProg}")
