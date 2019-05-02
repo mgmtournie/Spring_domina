@@ -20,11 +20,6 @@ public class CapteurCO2ServiceImpl implements ICapteurCO2Service {
 		return this.capteurCO2DAO.findAll();
 	}
 
-
-	public CapteurCO2 findByIdCapteurCO2(int id) {
-		return this.capteurCO2DAO.findByIdCapteur(id);
-	}
-
 	@Override
 	public List<CapteurCO2> findByPiece(Piece piece) {
 		return this.capteurCO2DAO.findByPiece(piece);
@@ -47,8 +42,7 @@ public class CapteurCO2ServiceImpl implements ICapteurCO2Service {
 
 	@Override
 	public CapteurCO2 findByIdCapteur(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.capteurCO2DAO.findByIdCapteur(id);
 	}
 
 }
