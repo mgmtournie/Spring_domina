@@ -3,14 +3,16 @@ package com.service;
 import java.util.List;
 
 import com.entity.ConsommationEau;
+import com.entity.Installation;
+import com.entity.Piece;
 
 public interface IConsommationEauService {
 
 	public List<ConsommationEau> getAllConsommationsEau();
 
-	public List<ConsommationEau> findByPieces(int idpiece);
+	public List<ConsommationEau> findByPiece(Piece piece);
 
-	public ConsommationEau findByInstal(int idinstal);
+	public ConsommationEau findByInstal(Installation instal);
 
 	public ConsommationEau findByIdConsommateur(int idConsommateur);
 

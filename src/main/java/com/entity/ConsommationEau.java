@@ -23,8 +23,8 @@ public class ConsommationEau extends Consommation {
 	}
 
 	public ConsommationEau(int idConsommateur, String fournisseur, String type, Installation instal,
-			List<Piece> pieces, double consM3Jour, double consM3Mois, double consM3An) {
-		super(idConsommateur, fournisseur, type, instal, pieces);
+			Piece piece, double consM3Jour, double consM3Mois, double consM3An) {
+		super(idConsommateur, fournisseur, type, instal, piece);
 		ConsM3Jour = consM3Jour;
 		ConsM3Mois = consM3Mois;
 		ConsM3An = consM3An;

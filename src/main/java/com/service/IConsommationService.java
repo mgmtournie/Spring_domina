@@ -3,6 +3,8 @@ package com.service;
 import java.util.List;
 
 import com.entity.Consommation;
+import com.entity.Installation;
+import com.entity.Piece;
 
 public interface IConsommationService {
 
@@ -10,9 +12,9 @@ public interface IConsommationService {
 
 	public List<Consommation> findByType(String type);
 
-	public List<Consommation> findByPieces(int idpiece);
+	public List<Consommation> findByPiece(Piece piece);
 
-	public Consommation findByInstal(int idinstal);
+	public Consommation findByInstal(Installation instal);
 
 	public Consommation findByIdConsommateur(int idConsommateur);
 

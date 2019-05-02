@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.DAO.CapteurCO2DAO;
-
 import com.entity.CapteurCO2;
+import com.entity.Piece;
 
 @Service
 public class CapteurCO2ServiceImpl implements ICapteurCO2Service {
@@ -26,8 +26,8 @@ public class CapteurCO2ServiceImpl implements ICapteurCO2Service {
 	}
 
 	@Override
-	public List<CapteurCO2> findByPiece(int idPiece) {
-		return this.capteurCO2DAO.findByPiece(idPiece);
+	public List<CapteurCO2> findByPiece(Piece piece) {
+		return this.capteurCO2DAO.findByPiece(piece);
 	}
 
 	@Override

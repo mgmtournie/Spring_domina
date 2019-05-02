@@ -3,6 +3,7 @@ package com.service;
 import java.util.List;
 
 import com.entity.CapteurTemp;
+import com.entity.Piece;
 
 public interface ICapteurTempService {
 
@@ -10,7 +11,7 @@ public interface ICapteurTempService {
 
 	public CapteurTemp findByIdCapteur(int id);
 
-	public List<CapteurTemp> findByPiece(int idPiece);
+	public List<CapteurTemp> findByPiece(Piece piece);
 
 	public void addCapteurTemp(CapteurTemp capteurTemp);
 

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.CapteurHumiditeDAO;
 import com.entity.CapteurHumidite;
+import com.entity.Piece;
 
 @Service
 public class CapteurHumiditeServiceImpl implements ICapteurHumiditeService {
@@ -26,8 +27,8 @@ public class CapteurHumiditeServiceImpl implements ICapteurHumiditeService {
 	}
 
 	@Override
-	public List<CapteurHumidite> findByPiece(int idPiece) {
-		return this.capteurHumidite.findByPiece(idPiece);
+	public List<CapteurHumidite> findByPiece(Piece piece) {
+		return this.capteurHumidite.findByPiece(piece);
 	}
 
 	@Override

@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.CapteurHumidite;
+import com.entity.Piece;
 import com.service.ICapteurHumiditeService;
+import com.service.IPieceService;
 
 @RestController
 @RequestMapping("/capteur/Humidite")
@@ -24,6 +26,9 @@ public class CapteurHumiditeController {
 
 	@Autowired
 	ICapteurHumiditeService capteurHumiditeService;
+	
+	@Autowired
+	IPieceService pieceService;
 
 	@GetMapping(value = "/all")
 	public List<CapteurHumidite> getAllCapteursHumidite() {
@@ -37,7 +42,9 @@ public class CapteurHumiditeController {
 
 	@GetMapping(value = "/Piece/{idPiece}")
 	public List<CapteurHumidite> findByPiece(@PathVariable int idPiece) {
-		return this.capteurHumiditeService.findByPiece(idPiece);
+		Piece piece = new Piece();
+		piece = pieceService.findByIdPiece(idPiece);
+		return this.capteurHumiditeService.findByPiece(piece);
 	}
 
 	@PostMapping(value = "/addCapteur", consumes = MediaType.APPLICATION_JSON_VALUE)

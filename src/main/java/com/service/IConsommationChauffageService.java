@@ -3,14 +3,16 @@ package com.service;
 import java.util.List;
 
 import com.entity.ConsommationChauffage;
+import com.entity.Installation;
+import com.entity.Piece;
 
 public interface IConsommationChauffageService {
 
 	public List<ConsommationChauffage> getAllConsommationsChauffage();
 
-	public List<ConsommationChauffage> findByPieces(int idpiece);
+	public List<ConsommationChauffage> findByPiece(Piece piece);
 
-	public ConsommationChauffage findByInstal(int idinstal);
+	public ConsommationChauffage findByInstal(Installation instal);
 
 	public ConsommationChauffage findByIdConsommateur(int idConsommateur);
 

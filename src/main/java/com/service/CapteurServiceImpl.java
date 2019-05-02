@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.CapteurDAO;
 import com.entity.Capteur;
+import com.entity.Piece;
 
 @Service
 public class CapteurServiceImpl implements ICapteurService {
@@ -30,8 +31,8 @@ public class CapteurServiceImpl implements ICapteurService {
 	}
 
 	@Override
-	public List<Capteur> findByPiece(int idPiece) {
-		return this.capteurDAO.findByPiece(idPiece);
+	public List<Capteur> findByPiece(Piece piece) {
+		return this.capteurDAO.findByPiece(piece);
 	}
 
 	@Override

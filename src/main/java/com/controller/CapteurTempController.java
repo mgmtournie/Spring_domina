@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.CapteurTemp;
+import com.entity.Piece;
 import com.service.ICapteurTempService;
+import com.service.IPieceService;
 
 @RestController
 @RequestMapping("/capteur/Temp")
@@ -24,6 +26,9 @@ public class CapteurTempController {
 
 	@Autowired
 	ICapteurTempService capteurTempService;
+	
+	@Autowired
+	IPieceService pieceService;
 //postman ok
 	@GetMapping(value = "/all")
 	public List<CapteurTemp> getAllCapteursTemp() {
@@ -37,7 +42,9 @@ public class CapteurTempController {
 
 	@GetMapping(value = "/Piece/{idPiece}")
 	public List<CapteurTemp> findByPiece(@PathVariable int idPiece) {
-		return this.capteurTempService.findByPiece(idPiece);
+		Piece piece = new Piece();
+		piece = pieceService.findByIdPiece(idPiece);
+		return this.capteurTempService.findByPiece(piece);
 	}
 
 	@PostMapping(value = "/addCapteur", consumes = MediaType.APPLICATION_JSON_VALUE)

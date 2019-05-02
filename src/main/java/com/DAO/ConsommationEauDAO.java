@@ -6,14 +6,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.entity.ConsommationEau;
+import com.entity.Installation;
+import com.entity.Piece;
 
 @Repository
 public interface ConsommationEauDAO extends JpaRepository<ConsommationEau, Integer> {
 
 	public ConsommationEau findByIdConsommateur(int idConso);
 
-	public List<ConsommationEau> findByPieces(int idPiece);
+	public List<ConsommationEau> findByPiece(Piece piece);
 
-	public ConsommationEau findByInstal(int idinstal);
+	public ConsommationEau findByInstal(Installation instal);
 
 }

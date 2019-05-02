@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.CapteurLumenDAO;
 import com.entity.CapteurLumen;
+import com.entity.Piece;
 
 @Service
 public class CapteurLumenServiceImpl implements ICapteurLumenService {
@@ -26,8 +27,8 @@ public class CapteurLumenServiceImpl implements ICapteurLumenService {
 	}
 
 	@Override
-	public List<CapteurLumen> findByPiece(int idPiece) {
-		return this.findByPiece(idPiece);
+	public List<CapteurLumen> findByPiece(Piece piece) {
+		return this.findByPiece(piece);
 	}
 
 	@Override

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.ConsommationEauDAO;
 import com.entity.ConsommationEau;
+import com.entity.Installation;
+import com.entity.Piece;
 
 @Service
 public class ConsommationEauServiceImpl implements IConsommationEauService {
@@ -20,13 +22,13 @@ public class ConsommationEauServiceImpl implements IConsommationEauService {
 	}
 
 	@Override
-	public List<ConsommationEau> findByPieces(int idpiece) {
-		return this.ConsommationEauDAO.findByPieces(idpiece);
+	public List<ConsommationEau> findByPiece(Piece piece) {
+		return this.ConsommationEauDAO.findByPiece(piece);
 	}
 
 	@Override
-	public ConsommationEau findByInstal(int idinstal) {
-		return this.ConsommationEauDAO.findByInstal(idinstal);
+	public ConsommationEau findByInstal(Installation instal) {
+		return this.ConsommationEauDAO.findByInstal(instal);
 	}
 
 	@Override

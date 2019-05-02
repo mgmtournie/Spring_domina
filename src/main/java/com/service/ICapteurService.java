@@ -3,6 +3,7 @@ package com.service;
 import java.util.List;
 
 import com.entity.Capteur;
+import com.entity.Piece;
 
 public interface ICapteurService {
 
@@ -12,7 +13,7 @@ public interface ICapteurService {
 
 	public List<Capteur> findByType(String type);
 
-	public List<Capteur> findByPiece(int idPiece);
+	public List<Capteur> findByPiece(Piece piece);
 
 	public void addCapteur(Capteur capteur);
 

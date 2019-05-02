@@ -10,8 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -37,7 +37,7 @@ public class Piece {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<Capteur> capteurs = new ArrayList<Capteur>();
 
-	@ManyToOne
+	@OneToOne
 	Consommation conso;
 
 	public Piece() {

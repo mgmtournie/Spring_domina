@@ -15,7 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.Consommation;
+import com.entity.Installation;
+import com.entity.Piece;
 import com.service.IConsommationService;
+import com.service.IInstallationService;
+import com.service.IPieceService;
 
 @RestController
 @RequestMapping("/conso")
@@ -24,6 +28,13 @@ public class ConsommationController {
 
 	@Autowired
 	IConsommationService consommationService;
+	
+	@Autowired
+	IPieceService pieceService;
+	
+	@Autowired
+	IInstallationService instalService;
+	
 	//postman ok
 	@GetMapping(value = "/all")
 	public List<Consommation> getAllConsommations() {
@@ -31,13 +42,17 @@ public class ConsommationController {
 	}
 
 	@GetMapping(value = "/Piece/{idpiece}")
-	public List<Consommation> findByPieces(@PathVariable int idpiece) {
-		return consommationService.findByPieces(idpiece);
+	public List<Consommation> findByPiece(@PathVariable int idpiece) {
+		Piece piece = new Piece();
+		piece = pieceService.findByIdPiece(idpiece);
+		return consommationService.findByPiece(piece);
 	}
 
 	@GetMapping(value = "/Instal/{idinstal}")
 	public Consommation findByInstal(@PathVariable int idinstal) {
-		return consommationService.findByInstal(idinstal);
+		Installation instal = new Installation();
+		instal = instalService.findById(idinstal);
+		return consommationService.findByInstal(instal);
 
 	}
 

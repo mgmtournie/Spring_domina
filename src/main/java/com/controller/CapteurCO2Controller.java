@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.entity.CapteurCO2;
+import com.entity.Piece;
 import com.service.ICapteurCO2Service;
+import com.service.IPieceService;
 
 @RestController
 @RequestMapping("/capteur/CO2")
@@ -24,6 +26,9 @@ public class CapteurCO2Controller {
 
 	@Autowired
 	ICapteurCO2Service capteurCO2Service;
+	
+	@Autowired
+	IPieceService pieceService;
 //test postman ok
 	@GetMapping(value = "/all")
 	public List<CapteurCO2> getAllCapteursCO2() {
@@ -34,10 +39,12 @@ public class CapteurCO2Controller {
 	public CapteurCO2 findByIdCapteur(@PathVariable int id) {
 		return this.capteurCO2Service.findByIdCapteur(id);
 	}
-//Parameter value [1] did not match expected type [com.entity.Piece (n/a)]
+//Postman ok youpiiii
 	@GetMapping(value = "/Piece/{idPiece}")
 	public List<CapteurCO2> findByPiece(@PathVariable int idPiece) {
-		return this.capteurCO2Service.findByPiece(idPiece);
+		Piece piece = new Piece();
+		piece = pieceService.findByIdPiece(idPiece);
+		return this.capteurCO2Service.findByPiece(piece);
 	}
 
 	@PostMapping(value = "/addCapteur", consumes = MediaType.APPLICATION_JSON_VALUE)

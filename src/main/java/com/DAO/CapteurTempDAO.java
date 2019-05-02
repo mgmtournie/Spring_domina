@@ -6,12 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.entity.CapteurTemp;
+import com.entity.Piece;
 
 @Repository
 public interface CapteurTempDAO extends JpaRepository<CapteurTemp, Integer> {
 
 	public CapteurTemp findByIdCapteur(int idCapteur);
 
-	public List<CapteurTemp> findByPiece(int idPiece);
+	public List<CapteurTemp> findByPiece(Piece piece);
 
 }

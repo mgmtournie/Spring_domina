@@ -23,8 +23,8 @@ public class ConsommationElec extends Consommation {
 	}
 
 	public ConsommationElec(int idConsommateur, String fournisseur, String type, Installation instal,
-			List<Piece> pieces, double consKWhJour, double consKWhMois, double consKWhAn) {
-		super(idConsommateur, fournisseur, type, instal, pieces);
+			Piece piece, double consKWhJour, double consKWhMois, double consKWhAn) {
+		super(idConsommateur, fournisseur, type, instal, piece);
 		ConsKWhJour = consKWhJour;
 		ConsKWhMois = consKWhMois;
 		ConsKWhAn = consKWhAn;

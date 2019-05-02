@@ -3,6 +3,7 @@ package com.service;
 import java.util.List;
 
 import com.entity.CapteurCO2;
+import com.entity.Piece;
 
 public interface ICapteurCO2Service {
 
@@ -10,7 +11,7 @@ public interface ICapteurCO2Service {
 
 	public CapteurCO2 findByIdCapteur(int id);
 
-	public List<CapteurCO2> findByPiece(int idPiece);
+	public List<CapteurCO2> findByPiece(Piece piece);
 
 	public void addCapteurCO2(CapteurCO2 capteurCO2);
 

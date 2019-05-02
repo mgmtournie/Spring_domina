@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.ConsommationElecDAO;
 import com.entity.ConsommationElec;
+import com.entity.Installation;
+import com.entity.Piece;
 
 @Service
 public class ConsommationElecServiceImpl implements IConsommationElecService {
@@ -20,13 +22,13 @@ public class ConsommationElecServiceImpl implements IConsommationElecService {
 	}
 
 	@Override
-	public List<ConsommationElec> findByPieces(int idpiece) {
-		return this.ConsommationElecDAO.findByPieces(idpiece);
+	public List<ConsommationElec> findByPiece(Piece piece) {
+		return this.ConsommationElecDAO.findByPiece(piece);
 	}
 
 	@Override
-	public ConsommationElec findByInstal(int idinstal) {
-		return this.ConsommationElecDAO.findByInstal(idinstal);
+	public ConsommationElec findByInstal(Installation instal) {
+		return this.ConsommationElecDAO.findByInstal(instal);
 	}
 
 	@Override

@@ -36,21 +36,21 @@ public class Consommation {
 	@OneToOne
 	Installation instal;
 
-	@OneToMany
-	private List<Piece> pieces = new ArrayList<Piece>();
+	@OneToOne
+	private Piece piece;
 
 	public Consommation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Consommation(int idConsommateur, String fournisseur, String type, Installation instal, List<Piece> pieces) {
+	public Consommation(int idConsommateur, String fournisseur, String type, Installation instal, Piece piece) {
 		super();
 		this.idConsommateur = idConsommateur;
 		this.fournisseur = fournisseur;
 		this.type = type;
 		this.instal = instal;
-		this.pieces = pieces;
+		this.piece = piece;
 	}
 
 	public int getIdConsommateur() {
@@ -85,12 +85,12 @@ public class Consommation {
 		this.instal = instal;
 	}
 
-	public List<Piece> getPieces() {
-		return pieces;
+	public Piece getPiece() {
+		return piece;
 	}
 
 	public void setPieces(List<Piece> pieces) {
-		this.pieces = pieces;
+		this.piece = piece;
 	}
 
 }

@@ -28,7 +28,7 @@ public class Capteur {
 	private String type;	
 	
 	@ManyToOne
-	@JoinColumn(name = "ID_ROOM")
+	@JoinColumn(name = "ROOM")
 	private Piece piece;
 
 	public Capteur() {

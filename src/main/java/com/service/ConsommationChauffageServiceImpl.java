@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.ConsommationChauffageDAO;
 import com.entity.ConsommationChauffage;
+import com.entity.Installation;
+import com.entity.Piece;
 
 @Service
 public class ConsommationChauffageServiceImpl implements IConsommationChauffageService {
@@ -20,13 +22,13 @@ public class ConsommationChauffageServiceImpl implements IConsommationChauffageS
 	}
 
 	@Override
-	public List<ConsommationChauffage> findByPieces(int idpiece) {
-		return this.ConsommationChauffageDAO.findByPieces(idpiece);
+	public List<ConsommationChauffage> findByPiece(Piece piece) {
+		return this.ConsommationChauffageDAO.findByPiece(piece);
 	}
 
 	@Override
-	public ConsommationChauffage findByInstal(int idinstal) {
-		return this.ConsommationChauffageDAO.findByInstal(idinstal);
+	public ConsommationChauffage findByInstal(Installation instal) {
+		return this.ConsommationChauffageDAO.findByInstal(instal);
 	}
 
 	@Override
