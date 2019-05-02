@@ -11,7 +11,7 @@ import com.entity.Piece;
 @Repository
 public interface CapteurCO2DAO extends JpaRepository<CapteurCO2, Integer> {
 
-	public CapteurCO2 findByIdCapteur(int idCapteur);
+	public CapteurCO2 findByIdCapteur(int id);
 
 	public List<CapteurCO2> findByPiece(Piece piece);
 

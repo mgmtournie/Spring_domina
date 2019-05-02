@@ -35,9 +35,9 @@ public class CapteurCO2Controller {
 		return this.capteurCO2Service.getAllCapteursCO2();
 	}
 //test postman ok
-	@GetMapping(value = "/ID/{id}")
-	public CapteurCO2 findByIdCapteur(@PathVariable int id) {
-		return this.capteurCO2Service.findByIdCapteur(id);
+	@GetMapping(value = "/ID/{idCapteur}")
+	public CapteurCO2 findByIdCapteur(@PathVariable int idCapteur) {
+		return this.capteurCO2Service.findByIdCapteur(idCapteur);
 	}
 //Postman ok youpiiii
 	@GetMapping(value = "/Piece/{idPiece}")
@@ -46,19 +46,19 @@ public class CapteurCO2Controller {
 		piece = pieceService.findByIdPiece(idPiece);
 		return this.capteurCO2Service.findByPiece(piece);
 	}
-
+//postman ok
 	@PostMapping(value = "/addCapteur", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void addCapteurCO2(CapteurCO2 capteurCO2) {
 		this.capteurCO2Service.addCapteurCO2(capteurCO2);
 	}
-
-	@PutMapping("/{idCapteur}")
+//postman ok
+	@PutMapping(value = "/{idCapteur}")
 	public void updateCapteurCO2(@RequestBody CapteurCO2 capteurCO2, @PathVariable int idCapteur) {
 		if (capteurCO2Service.findByIdCapteur(idCapteur) != null) {
 			capteurCO2Service.addCapteurCO2(capteurCO2);
 		}
 	}
-
+//postamn
 	@DeleteMapping("/{idCapteur}")
 	public void deleteCapteurCO2(@PathVariable int idCapteur) {
 		if (capteurCO2Service.findByIdCapteur(idCapteur) != null) {
