@@ -3,6 +3,8 @@ package com.service;
 import java.util.List;
 
 import com.entity.InstalVMC;
+import com.entity.Piece;
+import com.entity.Programme;
 
 public interface IInstalVMCService {
 
@@ -14,9 +16,9 @@ public interface IInstalVMCService {
 
 	public List<InstalVMC> findByEtat(boolean etat);
 
-	public List<InstalVMC> findByPiece(int idpiece);
+	public List<InstalVMC> findByPiece(Piece piece);
 
-	public List<InstalVMC> findByProgrammes(int idprog);
+	public List<InstalVMC> findByProgrammes(List<Programme> programmes);
 
 	public void actived(InstalVMC instal);
 

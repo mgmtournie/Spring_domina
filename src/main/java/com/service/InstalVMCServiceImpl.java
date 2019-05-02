@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.InstalVMCDAO;
 import com.entity.InstalVMC;
+import com.entity.Piece;
+import com.entity.Programme;
 
 @Service
 public class InstalVMCServiceImpl implements IInstalVMCService {
@@ -36,13 +38,13 @@ public class InstalVMCServiceImpl implements IInstalVMCService {
 	}
 
 	@Override
-	public List<InstalVMC> findByPiece(int idpiece) {
-		return this.instalVMCDAO.findByPiece(idpiece);
+	public List<InstalVMC> findByPiece(Piece piece) {
+		return this.instalVMCDAO.findByPiece(piece);
 	}
 
 	@Override
-	public List<InstalVMC> findByProgrammes(int idprog) {
-		return this.instalVMCDAO.findByProgrammes(idprog);
+	public List<InstalVMC> findByProgrammes(List<Programme> programmes) {
+		return this.instalVMCDAO.findByProgrammes(programmes);
 	}
 
 	@Override

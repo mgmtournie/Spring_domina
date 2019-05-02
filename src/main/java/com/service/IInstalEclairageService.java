@@ -3,6 +3,8 @@ package com.service;
 import java.util.List;
 
 import com.entity.InstalEclairage;
+import com.entity.Piece;
+import com.entity.Programme;
 
 public interface IInstalEclairageService {
 
@@ -14,9 +16,9 @@ public interface IInstalEclairageService {
 
 	public List<InstalEclairage> findByEtat(boolean etat);
 
-	public List<InstalEclairage> findByPiece(int idpiece);
+	public List<InstalEclairage> findByPiece(Piece piece);
 
-	public List<InstalEclairage> findByProgrammes(int idprog);
+	public List<InstalEclairage> findByProgrammes(List<Programme> programmes);
 
 	public void actived(InstalEclairage instal);
 

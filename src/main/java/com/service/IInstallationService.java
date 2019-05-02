@@ -3,6 +3,8 @@ package com.service;
 import java.util.List;
 
 import com.entity.Installation;
+import com.entity.Piece;
+import com.entity.Programme;
 
 public interface IInstallationService {
 
@@ -16,9 +18,9 @@ public interface IInstallationService {
 
 	public List<Installation> findByEtat(boolean etat);
 
-	public List<Installation> findByPiece(int idpiece);
+	public List<Installation> findByPiece(Piece piece);
 
-	public List<Installation> findByProgramme(int idprog);
+	public List<Installation> findByProgramme(List<Programme> programmes);
 
 	public void actived(Installation instal);
 

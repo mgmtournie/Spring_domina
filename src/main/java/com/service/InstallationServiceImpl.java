@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.InstallationDAO;
 import com.entity.Installation;
+import com.entity.Piece;
+import com.entity.Programme;
 
 @Service
 public class InstallationServiceImpl implements IInstallationService {
@@ -40,13 +42,13 @@ public class InstallationServiceImpl implements IInstallationService {
 	}
 
 	@Override
-	public List<Installation> findByPiece(int idpiece) {
-		return this.installationDAO.findByPiece(idpiece);
+	public List<Installation> findByPiece(Piece piece) {
+		return this.installationDAO.findByPiece(piece);
 	}
 
 	@Override
-	public List<Installation> findByProgramme(int idprog) {
-		return this.installationDAO.findByProgrammes(idprog);
+	public List<Installation> findByProgramme(List<Programme> programmes) {
+		return this.installationDAO.findByProgrammes(programmes);
 	}
 
 	@Override

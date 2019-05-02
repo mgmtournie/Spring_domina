@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.InstalVoletDAO;
 import com.entity.InstalVolet;
+import com.entity.Piece;
+import com.entity.Programme;
 
 @Service
 public class InstalVoletServiceImpl implements IInstalVoletService {
@@ -36,13 +38,13 @@ public class InstalVoletServiceImpl implements IInstalVoletService {
 	}
 
 	@Override
-	public List<InstalVolet> findByPiece(int idpiece) {
-		return this.instalVoletDAO.findByPiece(idpiece);
+	public List<InstalVolet> findByPiece(Piece piece) {
+		return this.instalVoletDAO.findByPiece(piece);
 	}
 
 	@Override
-	public List<InstalVolet> findByProgrammes(int idprog) {
-		return this.instalVoletDAO.findByProgrammes(idprog);
+	public List<InstalVolet> findByProgrammes(List<Programme> programmes) {
+		return this.instalVoletDAO.findByProgrammes(programmes);
 	}
 
 	@Override

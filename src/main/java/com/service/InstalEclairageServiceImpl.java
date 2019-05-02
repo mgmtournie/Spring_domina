@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.DAO.InstalEclairageDAO;
 import com.entity.InstalEclairage;
+import com.entity.Piece;
+import com.entity.Programme;
 
 @Service
 public class InstalEclairageServiceImpl implements IInstalEclairageService {
@@ -36,13 +38,13 @@ public class InstalEclairageServiceImpl implements IInstalEclairageService {
 	}
 
 	@Override
-	public List<InstalEclairage> findByPiece(int idpiece) {
-		return this.instalEclairageDAO.findByPiece(idpiece);
+	public List<InstalEclairage> findByPiece(Piece piece) {
+		return this.instalEclairageDAO.findByPiece(piece);
 	}
 
 	@Override
-	public List<InstalEclairage> findByProgrammes(int idprog) {
-		return this.instalEclairageDAO.findByProgrammes(idprog);
+	public List<InstalEclairage> findByProgrammes(List<Programme> programmes){
+		return this.instalEclairageDAO.findByProgrammes(programmes);
 	}
 
 	@Override

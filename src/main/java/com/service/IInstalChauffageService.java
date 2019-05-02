@@ -3,6 +3,8 @@ package com.service;
 import java.util.List;
 
 import com.entity.InstalChauffage;
+import com.entity.Piece;
+import com.entity.Programme;
 
 public interface IInstalChauffageService {
 
@@ -14,9 +16,9 @@ public interface IInstalChauffageService {
 
 	public List<InstalChauffage> findByEtat(boolean etat);
 
-	public List<InstalChauffage> findByPiece(int idpiece);
+	public List<InstalChauffage> findByPiece(Piece piece);
 
-	public List<InstalChauffage> findByProgramme(int idprog);
+	public List<InstalChauffage> findByProgramme(List<Programme> programmes);
 
 	public void actived(InstalChauffage instal);
 
