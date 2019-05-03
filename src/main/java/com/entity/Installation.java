@@ -58,7 +58,7 @@ public class Installation {
 		super();
 		this.id = id;
 		this.type = type;
-		dateAjout = dateAjout;
+		this.dateAjout = dateAjout;
 		this.etat = etat;
 		this.piece = piece;
 		this.programmes = programmes;
