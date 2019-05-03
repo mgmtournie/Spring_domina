@@ -1,7 +1,5 @@
 package com.entity;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -10,11 +8,11 @@ import javax.persistence.Entity;
 @DiscriminatorValue("Eau")
 public class ConsommationEau extends Consommation {
 
-	@Column(name="m3_par_jour")
+	@Column(name = "m3_par_jour")
 	private double ConsM3Jour;
-	@Column(name="m3_par_mois")
+	@Column(name = "m3_par_mois")
 	private double ConsM3Mois;
-	@Column(name="m3_par_an")
+	@Column(name = "m3_par_an")
 	private double ConsM3An;
 
 	public ConsommationEau() {
@@ -22,8 +20,8 @@ public class ConsommationEau extends Consommation {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ConsommationEau(int idConsommateur, String fournisseur, String type, Installation instal,
-			Piece piece, double consM3Jour, double consM3Mois, double consM3An) {
+	public ConsommationEau(int idConsommateur, String fournisseur, String type, Installation instal, Piece piece,
+			double consM3Jour, double consM3Mois, double consM3An) {
 		super(idConsommateur, fournisseur, type, instal, piece);
 		ConsM3Jour = consM3Jour;
 		ConsM3Mois = consM3Mois;

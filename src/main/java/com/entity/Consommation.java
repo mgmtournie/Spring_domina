@@ -1,8 +1,5 @@
 package com.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -12,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -89,7 +85,7 @@ public class Consommation {
 		return piece;
 	}
 
-	public void setPieces(List<Piece> pieces) {
+	public void setPiece(Piece piece) {
 		this.piece = piece;
 	}
 
