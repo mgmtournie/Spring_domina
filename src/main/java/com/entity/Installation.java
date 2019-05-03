@@ -42,7 +42,7 @@ public class Installation {
 	@JoinColumn(name = "ID_ROOM")
 	private Piece piece;
 
-	@ManyToMany(mappedBy = "installations")
+	@ManyToMany
 	private List<Programme> programmes = new ArrayList<Programme>();
 
 	@OneToOne

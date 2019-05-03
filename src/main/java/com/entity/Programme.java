@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -32,7 +31,7 @@ public class Programme {
 	private Piece piece;
 
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "PROGS_INSTALS", joinColumns = @JoinColumn(name = "PROG_ID", referencedColumnName = "ID_PROG"), inverseJoinColumns = @JoinColumn(name = "INSTAL_ID", referencedColumnName = "ID_INSTAL"))
+	@JoinColumn(name = "installations")
 	List<Installation> installations = new ArrayList<Installation>();
 
 	public Programme() {
