@@ -33,7 +33,7 @@ public class Installation {
 	private String type;
 
 	@Column(name = "Date_ajout")
-	private String DateAjout;
+	private String dateAjout;
 
 	@Column(name = "ETAT")
 	private boolean etat;
@@ -58,7 +58,7 @@ public class Installation {
 		super();
 		this.id = id;
 		this.type = type;
-		DateAjout = dateAjout;
+		dateAjout = dateAjout;
 		this.etat = etat;
 		this.piece = piece;
 		this.programmes = programmes;
@@ -82,11 +82,11 @@ public class Installation {
 	}
 
 	public String getDateAjout() {
-		return DateAjout;
+		return dateAjout;
 	}
 
 	public void setDateAjout(String dateAjout) {
-		DateAjout = dateAjout;
+		dateAjout = dateAjout;
 	}
 
 	public boolean getEtat() {
