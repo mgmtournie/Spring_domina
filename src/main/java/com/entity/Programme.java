@@ -33,6 +33,7 @@ public class Programme {
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "PROGS_INSTALS", joinColumns = @JoinColumn(name = "PROG_ID", referencedColumnName = "ID_PROG"), inverseJoinColumns = @JoinColumn(name = "INSTAL_ID", referencedColumnName = "ID_INSTAL"))
+	@JoinColumn
 	List<Installation> installations = new ArrayList<Installation>();
 
 	public Programme() {
