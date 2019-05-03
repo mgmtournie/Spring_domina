@@ -45,9 +45,6 @@ public class Installation {
 	@ManyToMany
 	private List<Programme> programmes = new ArrayList<Programme>();
 
-	@OneToOne
-	Consommation conso;
-
 	public Installation() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -62,7 +59,6 @@ public class Installation {
 		this.etat = etat;
 		this.piece = piece;
 		this.programmes = programmes;
-		this.conso = conso;
 	}
 
 	public int getId() {
@@ -86,7 +82,7 @@ public class Installation {
 	}
 
 	public void setDateAjout(String dateAjout) {
-		dateAjout = dateAjout;
+		this.dateAjout = dateAjout;
 	}
 
 	public boolean getEtat() {
@@ -113,12 +109,5 @@ public class Installation {
 		this.programmes = programmes;
 	}
 
-	public Consommation getConso() {
-		return conso;
-	}
-
-	public void setConso(Consommation conso) {
-		this.conso = conso;
-	}
 
 }

@@ -58,7 +58,7 @@ public class CapteurCO2Controller {
 			capteurCO2Service.addCapteurCO2(capteurCO2);
 		}
 	}
-//postamn
+//postman ok
 	@DeleteMapping("/{idCapteur}")
 	public void deleteCapteurCO2(@PathVariable int idCapteur) {
 		if (capteurCO2Service.findByIdCapteur(idCapteur) != null) {
