@@ -33,7 +33,7 @@ public class Installation {
 	private String type;
 
 	@Column(name = "Date_ajout")
-	private String DateAjout;
+	private String dateAjout;
 
 	@Column(name = "ETAT")
 	private boolean etat;
@@ -42,11 +42,8 @@ public class Installation {
 	@JoinColumn(name = "ID_ROOM")
 	private Piece piece;
 
-	@ManyToMany(mappedBy = "installations")
+	@ManyToMany
 	private List<Programme> programmes = new ArrayList<Programme>();
-
-	@OneToOne
-	Consommation conso;
 
 	public Installation() {
 		super();
@@ -58,11 +55,10 @@ public class Installation {
 		super();
 		this.id = id;
 		this.type = type;
-		DateAjout = dateAjout;
+		this.dateAjout = dateAjout;
 		this.etat = etat;
 		this.piece = piece;
 		this.programmes = programmes;
-		this.conso = conso;
 	}
 
 	public int getId() {
@@ -82,11 +78,11 @@ public class Installation {
 	}
 
 	public String getDateAjout() {
-		return DateAjout;
+		return dateAjout;
 	}
 
 	public void setDateAjout(String dateAjout) {
-		DateAjout = dateAjout;
+		this.dateAjout = dateAjout;
 	}
 
 	public boolean getEtat() {
@@ -113,12 +109,5 @@ public class Installation {
 		this.programmes = programmes;
 	}
 
-	public Consommation getConso() {
-		return conso;
-	}
-
-	public void setConso(Consommation conso) {
-		this.conso = conso;
-	}
 
 }
