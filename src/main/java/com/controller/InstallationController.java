@@ -75,7 +75,7 @@ public class InstallationController {
 		return installationService.findByProgramme(programmes);
 	}
 
-	@PutMapping("/{idProg}")
+	@PutMapping("/actived/{idProg}")
 	public void actived(@RequestBody Installation installation, @PathVariable int idProg) {
 		if (installationService.findById(idProg) != null) {
 			installationService.addInstallation(installation);
