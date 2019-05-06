@@ -19,7 +19,7 @@ import com.service.IPersonneService;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = "http://localhost:8034")
+@CrossOrigin(origins = "http://localhost:4200")
 public class PersonneController {
 
 	@Autowired

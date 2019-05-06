@@ -19,7 +19,7 @@ import com.service.IProgrammeService;
 
 @RestController
 @RequestMapping("/prog")
-@CrossOrigin(origins = "http://localhost:8034")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProgrammeController {
 
 	@Autowired

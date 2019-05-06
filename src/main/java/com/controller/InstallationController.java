@@ -23,7 +23,7 @@ import com.service.IProgrammeService;
 
 @RestController
 @RequestMapping("/instal")
-@CrossOrigin(origins = "http://localhost:8034")
+@CrossOrigin(origins = "http://localhost:4200")
 public class InstallationController {
 
 	@Autowired

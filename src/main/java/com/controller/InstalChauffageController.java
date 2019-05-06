@@ -23,7 +23,7 @@ import com.service.IProgrammeService;
 
 @RestController
 @RequestMapping("/instal/Chauffage")
-@CrossOrigin(origins = "http://localhost:8034")
+@CrossOrigin(origins = "http://localhost:4200")
 public class InstalChauffageController {
 
 	@Autowired
@@ -70,7 +70,7 @@ public class InstalChauffageController {
 		return instalChauffageService.findByProgramme(programmes);
 	}
 
-	@PutMapping("/{idProg}")
+	@PutMapping("/actived/{idProg}")
 	public void actived(@RequestBody InstalChauffage InstalChauffage, @PathVariable int idProg) {
 		if (instalChauffageService.findById(idProg) != null) {
 			instalChauffageService.addInstalChauffage(InstalChauffage);

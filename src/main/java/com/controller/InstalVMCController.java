@@ -23,7 +23,7 @@ import com.service.IProgrammeService;
 
 @RestController
 @RequestMapping("/instal/VMC")
-@CrossOrigin(origins = "http://localhost:8034")
+@CrossOrigin(origins = "http://localhost:4200")
 public class InstalVMCController {
 
 	@Autowired
@@ -70,7 +70,7 @@ public class InstalVMCController {
 		return instalVMCService.findByProgrammes(programmes);
 	}
 
-	@PutMapping("/{idProg}")
+	@PutMapping("/actived/{idProg}")
 	public void actived(@RequestBody InstalVMC InstalVMC, @PathVariable int idProg) {
 		if (instalVMCService.findById(idProg) != null) {
 			instalVMCService.addInstalVMC(InstalVMC);

@@ -21,7 +21,7 @@ import com.service.IPieceService;
 
 @RestController
 @RequestMapping("/capteur/CO2")
-@CrossOrigin(origins = "http://localhost:8034")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CapteurCO2Controller {
 
 	@Autowired

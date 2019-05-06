@@ -23,7 +23,7 @@ import com.service.IProgrammeService;
 
 @RestController
 @RequestMapping("/instal/Eclairage")
-@CrossOrigin(origins = "http://localhost:8034")
+@CrossOrigin(origins = "http://localhost:4200")
 public class InstalEclairageController {
 
 	@Autowired
@@ -69,7 +69,7 @@ public class InstalEclairageController {
 		return instalEclairageService.findByProgrammes(programmes);
 	}
 
-	@PutMapping("/{idProg}")
+	@PutMapping("/actived/{idProg}")
 	public void actived(@RequestBody InstalEclairage InstalEclairage, @PathVariable int idProg) {
 		if (instalEclairageService.findById(idProg) != null) {
 			instalEclairageService.addInstalEclairage(InstalEclairage);

@@ -23,7 +23,7 @@ import com.service.IPieceService;
 
 @RestController
 @RequestMapping("/conso")
-@CrossOrigin(origins = "http://localhost:8034")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ConsommationController {
 
 	@Autowired
