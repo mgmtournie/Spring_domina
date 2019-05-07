@@ -17,6 +17,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
+
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE", discriminatorType = DiscriminatorType.STRING)
 @Entity
@@ -41,6 +43,7 @@ public class Installation {
 	@JoinColumn(name = "ID_ROOM")
 	private Piece piece;
 
+	
 	@ManyToMany
 	private List<Programme> programmes = new ArrayList<Programme>();
 

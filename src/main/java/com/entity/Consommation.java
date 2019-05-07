@@ -12,6 +12,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TYPE_CONSO", discriminatorType = DiscriminatorType.STRING)
 @Entity
@@ -30,8 +32,10 @@ public class Consommation {
 	private String type;
 
 	@OneToOne
+	@JsonIgnore
 	Installation instal;
 
+	
 	@OneToOne
 	private Piece piece;
 

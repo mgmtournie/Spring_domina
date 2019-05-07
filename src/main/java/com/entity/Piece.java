@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "rooms")
 public class Piece {
@@ -28,15 +30,19 @@ public class Piece {
 	@Column(name = "SUPERFICIE")
 	private int superficieM2;
 
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<Programme> programmes = new ArrayList<Programme>();
-
+	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<Installation> installations = new ArrayList<Installation>();
 
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	List<Capteur> capteurs = new ArrayList<Capteur>();
 
+	@JsonIgnore
 	@OneToOne
 	Consommation conso;
 

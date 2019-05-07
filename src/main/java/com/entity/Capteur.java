@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="TYPE", discriminatorType=DiscriminatorType.STRING)
 @Entity
@@ -26,6 +28,7 @@ public class Capteur {
 	
 	@Column(insertable = false, updatable = false)
 	private String type;	
+	
 	
 	@ManyToOne
 	@JoinColumn(name = "ROOM")

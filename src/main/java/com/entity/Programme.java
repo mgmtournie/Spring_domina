@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "programmes")
 public class Programme {
@@ -26,10 +28,12 @@ public class Programme {
 	@Column(name = "PROG_NAME")
 	private String nomProg;
 
+	
 	@ManyToOne
 	@JoinColumn(name = "ID_ROOM")
 	private Piece piece;
 
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "installations")
 	List<Installation> installations = new ArrayList<Installation>();
