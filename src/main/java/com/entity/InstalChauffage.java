@@ -8,12 +8,14 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
+
 @Entity
 @DiscriminatorValue("Chauffage")
 public class InstalChauffage extends Installation {
 
 	@Column(name = "Puissance")
 	private int puissance;
+
 
 	@OneToOne(cascade = CascadeType.ALL)
 	ConsommationChauffage consoChauffage;

@@ -9,60 +9,54 @@ import javax.persistence.Entity;
 public class ConsommationChauffage extends Consommation {
 
 	@Column(name = "KWH_par_jour")
-	private double ConsKWhJour;
+	private double consKWhJour;
 	@Column(name = "KWH_par_mois")
-	private double ConsKWhMois;
+	private double consKWhMois;
 	@Column(name = "KWH_par_an")
-	private double ConsKWhAn;
+	private double consKWhAn;
 
 	public ConsommationChauffage() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ConsommationChauffage(int idConsommateur, String fournisseur, String type, Installation instal, Piece piece,
-			double consKWhJour, double consKWhMois, double consKWhAn) {
+	public ConsommationChauffage(int idConsommateur, String fournisseur, String type, Installation instal,
+			Piece piece) {
 		super(idConsommateur, fournisseur, type, instal, piece);
-		ConsKWhJour = consKWhJour;
-		ConsKWhMois = consKWhMois;
-		ConsKWhAn = consKWhAn;
+		// TODO Auto-generated constructor stub
 	}
 
 	public ConsommationChauffage(double consKWhJour, double consKWhMois, double consKWhAn) {
 		super();
-		ConsKWhJour = consKWhJour;
-		ConsKWhMois = consKWhMois;
-		ConsKWhAn = consKWhAn;
+		this.consKWhJour = consKWhJour;
+		this.consKWhMois = consKWhMois;
+		this.consKWhAn = consKWhAn;
 	}
 
 	public double getConsKWhJour() {
-		return ConsKWhJour;
+		return consKWhJour;
 	}
 
 	public void setConsKWhJour(double consKWhJour) {
-		ConsKWhJour = consKWhJour;
+		this.consKWhJour = consKWhJour;
 	}
 
 	public double getConsKWhMois() {
-		return ConsKWhMois;
+		return consKWhMois;
 	}
 
 	public void setConsKWhMois(double consKWhMois) {
-		ConsKWhMois = consKWhMois;
+		this.consKWhMois = consKWhMois;
 	}
 
 	public double getConsKWhAn() {
-		return ConsKWhAn;
+		return consKWhAn;
 	}
 
 	public void setConsKWhAn(double consKWhAn) {
-		ConsKWhAn = consKWhAn;
+		this.consKWhAn = consKWhAn;
 	}
 
-	@Override
-	public String toString() {
-		return "ConsommationChauffage [ConsKWhJour=" + ConsKWhJour + ", ConsKWhMois=" + ConsKWhMois + ", ConsKWhAn="
-				+ ConsKWhAn + "]";
-	}
+
 
 }

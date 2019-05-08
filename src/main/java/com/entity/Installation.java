@@ -3,6 +3,7 @@ package com.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -44,7 +46,8 @@ public class Installation {
 	private Piece piece;
 
 	
-	@ManyToMany
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="Installations_Programmes", joinColumns=@JoinColumn(name="instal_id", referencedColumnName="ID_INSTAL"), inverseJoinColumns=@JoinColumn(name="prog_id", referencedColumnName="ID_PROG"))
 	private List<Programme> programmes = new ArrayList<Programme>();
 
 	public Installation() {
