@@ -2,6 +2,7 @@ package com.service;
 
 import java.util.List;
 
+import com.entity.Piece;
 import com.entity.Programme;
 
 public interface IProgrammeService {
@@ -17,5 +18,7 @@ public interface IProgrammeService {
 	public Programme findByIdProg(int idProgramme);
 
 	public Programme findByNomProg(String nomProg);
+	
+	public List<Programme> findByPiece(Piece piece);
 
 }

@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.entity.Piece;
 import com.entity.Programme;
+import com.service.IPieceService;
 import com.service.IProgrammeService;
 
 @RestController
@@ -24,6 +26,9 @@ public class ProgrammeController {
 
 	@Autowired
 	IProgrammeService programmeService;
+	@Autowired
+	IPieceService pieceService;
+	
 	//postman ok
 	@GetMapping(value = "/all")
 	public List<Programme> getAllProgrammes() {
@@ -38,6 +43,13 @@ public class ProgrammeController {
 	@GetMapping(value = "/Nom/{nomProg}")
 	public Programme findByNomProg(@PathVariable String nomProg) {
 		return programmeService.findByNomProg(nomProg);
+	}
+	
+	@GetMapping(value = "/piece/{idpiece}")
+	public List<Programme> findByPiece(@PathVariable int idpiece) {
+		Piece piece = new Piece();
+		piece = pieceService.findByIdPiece(idpiece);
+		return programmeService.findByPiece(piece);
 	}
 
 	@PostMapping(value = "/addprog", consumes = MediaType.APPLICATION_JSON_VALUE)
