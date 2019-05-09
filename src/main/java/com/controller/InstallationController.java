@@ -58,7 +58,7 @@ public class InstallationController {
 	public List<Installation> findByEtat(@PathVariable boolean etat) {
 		return installationService.findByEtat(etat);
 	}
-
+	
 	@GetMapping(value = "/piece/{idpiece}")
 	public List<Installation> findByPiece(@PathVariable int idpiece) {
 		Piece piece = new Piece();
@@ -96,5 +96,7 @@ public class InstallationController {
 			installationService.deleteInstallation(installationService.findById(idInstall));
 		}
 	}
-
+	
+	
+	
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.DAO.PieceDAO;
+import com.entity.Installation;
 import com.entity.Piece;
 
 @Service
@@ -13,6 +14,9 @@ public class PieceServiceImpl implements IPieceService {
 
 	@Autowired
 	PieceDAO pieceDAO;
+	
+	@Autowired
+	InstallationServiceImpl instService;
 
 	public List<Piece> getAllPieces() {
 		return this.pieceDAO.findAll();
@@ -39,4 +43,20 @@ public class PieceServiceImpl implements IPieceService {
 		return this.pieceDAO.findByNomPiece(nom);
 	}
 
+	@Override
+	public void updatePieceWithInstallations(Piece piece, List<Installation> listInst) {
+	//	piece.setInstallations(listInst);
+		for (Installation ins : instService.findByPiece(piece)){
+			ins.setPiece(null);
+		}
+		 for(Installation inst : listInst){
+			 Installation instal =instService.findById(inst.getId());
+			 instal.setPiece(piece);
+			 this.instService.updateInstallation(instal);
+		 }
+		 this.updatePiece(this.pieceDAO.findByIdPiece(piece.getIdPiece()));
+		
+	}
+
+	
 }

@@ -2,6 +2,7 @@ package com.service;
 
 import java.util.List;
 
+import com.entity.Installation;
 import com.entity.Piece;
 
 public interface IPieceService {
@@ -17,4 +18,6 @@ public interface IPieceService {
 	public Piece findByIdPiece(int idPiece);
 
 	public Piece findByNomPiece(String nom);
+
+	public void updatePieceWithInstallations(Piece piece, List<Installation> listInst);
 }

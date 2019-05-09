@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dto.PieceInstallationDto;
 import com.entity.Piece;
 import com.service.IPieceService;
 
@@ -24,17 +25,20 @@ public class PieceController {
 
 	@Autowired
 	IPieceService pieceService;
-	//postman ok
+
+	// postman ok
 	@GetMapping(value = "/all")
 	public List<Piece> getAllPieces() {
 		return pieceService.getAllPieces();
 	}
-	//postman ok
+
+	// postman ok
 	@GetMapping(value = "/ID/{idPiece}")
 	public Piece findByIdPiece(@PathVariable int idPiece) {
 		return pieceService.findByIdPiece(idPiece);
 	}
-	//postman ok
+
+	// postman ok
 	@GetMapping(value = "/Nom/{nomPiece}")
 	public Piece findByNomPiece(@PathVariable String nomPiece) {
 		return pieceService.findByNomPiece(nomPiece);
@@ -45,17 +49,25 @@ public class PieceController {
 		this.pieceService.addPiece(piece);
 	}
 
-	@PutMapping("/{idPiece}")
-	public void updatePiece(@RequestBody Piece piece, @PathVariable int idPiece) {
-		if (pieceService.findByIdPiece(idPiece) != null) {
-			pieceService.addPiece(piece);
-		}
-	}
-
+	// @PutMapping("/{idPiece}")
+	// public void updatePiece(@RequestBody Piece piece, @PathVariable int
+	// idPiece) {
+	// if (pieceService.findByIdPiece(idPiece) != null) {
+	// pieceService.addPiece(piece);
+	// }
+	// }
 	@DeleteMapping("/{idPiece}")
 	public void deletePiece(@PathVariable int idPiece) {
 		if (pieceService.findByIdPiece(idPiece) != null) {
 			pieceService.deletePiece(pieceService.findByIdPiece(idPiece));
 		}
 	}
+	
+	@PutMapping("/{idPiece}")
+	public void updatePieceWithInstallation(@RequestBody PieceInstallationDto pieceInstallationDto) {
+			this.pieceService.updatePieceWithInstallations(pieceInstallationDto.getPiece(), pieceInstallationDto.getListInst());
+	//	System.out.println(pieceInstallationDto.getListInst().get(index));
+		
+	}
 }
+

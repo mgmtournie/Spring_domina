@@ -45,7 +45,7 @@ public class Piece {
 	@JsonIgnore
 	@OneToOne
 	Consommation conso;
-
+	
 	public Piece() {
 		super();
 		// TODO Auto-generated constructor stub
