@@ -69,7 +69,7 @@ public class InstalVoletController {
 		return instalVoletService.findByProgrammes(programmes);
 	}
 
-	@PutMapping("/{idProg}")
+	@PutMapping("/actived/{idProg}")
 	public void actived(@RequestBody InstalVolet InstalVolet, @PathVariable int idProg) {
 		if (instalVoletService.findById(idProg) != null) {
 			instalVoletService.addInstalVolet(InstalVolet);
