@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.DAO.ProgrammeDAO;
-
+import com.entity.Piece;
 import com.entity.Programme;
 
 @Service
@@ -37,5 +37,9 @@ public class ProgammeServiceImpl implements IProgrammeService {
 
 	public Programme findByNomProg(String nomProg) {
 		return this.programmeDAO.findByNomProg(nomProg);
+	}
+	
+	public List<Programme> findByPiece(Piece piece) {
+		return this.programmeDAO.findByPiece(piece);
 	}
 }

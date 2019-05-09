@@ -2,8 +2,6 @@ package com.entity;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,8 +32,7 @@ public class Programme {
 	private Piece piece;
 
 	@JsonIgnore
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "installations")
+	@ManyToMany(mappedBy="programmes")
 	List<Installation> installations = new ArrayList<Installation>();
 
 	public Programme() {
