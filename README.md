@@ -19,35 +19,45 @@ To install and run this project you need as requirements:
  * Maven - Maven 2 or a Higher version
 
 You will also need the front part of the application as a requirement.
-https://github.com/mgmtournie/Spring_domina
-
+https://github.com/LiviaLavy/Spring-Domina_Front-End
+ 
 ### Setting up
 To download the project, clone it from GitHub using the next command:
 
 ```
-$ git clone https://github.com/LiviaLavy/Spring-Domina_Front-End.git
+$ git clone https://github.com/mgmtournie/Spring_domina.git
 ```
-## Development server
+## Running tests
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Navigate to the project directory and use the next command : 
 
-## Code scaffolding
+ ````
+ $ mvn test 
+````
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installling 
 
-## Build
+To instal the project use the next command:
+````
+$ mvn install 
+````
+## Running 
 
-Run `ng build` to build the project. The build artefacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+To run the project use the next command:
+````* 
+$ mvn spring-boot:run
+````
 
-## Running unit tests
+## Technologie 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* [Java EE](https://www.oracle.com/technetwork/java/javaee/overview/index.html) - The web framework used
+* [Spring Boot](https://spring.io/projects/spring-boot) - The framework used for Microservice Architecture
+* [Spring Boot Data JPA](https://spring.io/projects/spring-data-jpa) - The framework used in the persistence Layer
+* [Spring WebService](https://spring.io/projects/spring-ws) -  The framework used in the Rest Controller Layer
+* [JUnit](https://junit.org/junit5/) - The framework used in the unit test
+* [Mockito](https://site.mockito.org) - The framework used in the unit test
+* [Maven](https://maven.apache.org) - Dependency Management
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-##Build With
 
 
 ## Further help
